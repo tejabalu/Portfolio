@@ -78,7 +78,10 @@ const NotWork = () => {
 								technology and design to solve problems. Being
 								from an interdisciplinary background, I feel
 								that I have an ability to draw unique insights
-								that lead to innovation in products.
+								that lead to innovation in products. In my free
+								time, I like learning and exploring tech,
+								listening to music, reading books (science
+								fiction, fantasy).
 							</Paragraph>
 							<Divider
 								pt={4}
@@ -86,19 +89,17 @@ const NotWork = () => {
 								borderColor="transparent"
 							/>
 							<Paragraph fontSize="xl" lineHeight={1.6}>
-								In my free time, I like learning and exploring
-								tech, listening to music, reading books (science
-								fiction, fantasy). If you are interested in my
-								other works related to design, please
-								visit&nbsp;
+								If you are interested in my other works related
+								to design, please visit my&nbsp;
 								<Link
 									color="blue.500"
 									href="https://www.behance.net/tejabalu"
 									isExternal
 									fontWeight="500"
 								>
-									behance.net/tejabalu.
+									Behance profile
 								</Link>
+								.
 							</Paragraph>
 						</Box>
 						<Divider my={10} />
