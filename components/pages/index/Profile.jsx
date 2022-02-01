@@ -34,8 +34,8 @@ const Profile = () => {
 					</Link>{" "}
 					at the University of Washington.
 					<br />
-					I'm looking for roles in Product/Program management from the
-					fall of 2022.
+					I'm looking for roles in Product/Technical Product
+					Management from the fall of 2022.
 				</Paragraph>
 				<Box mt={10}>
 					<LightMode>

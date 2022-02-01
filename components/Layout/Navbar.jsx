@@ -21,8 +21,8 @@ const Links = [
 		route: "/",
 	},
 	{
-		name: "Work",
-		route: "/work",
+		name: "Projects",
+		route: "/projects",
 	},
 	{
 		name: "Not Work",
