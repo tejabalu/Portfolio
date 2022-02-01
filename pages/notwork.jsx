@@ -9,6 +9,8 @@ import {
 	Collapse,
 	LightMode,
 	Tag,
+	Link,
+	Center,
 } from "@chakra-ui/react";
 import Paragraph from "components/Paragraph";
 import { useState } from "react";
@@ -71,84 +73,53 @@ const NotWork = () => {
 							>
 								About
 							</Heading>
-							<Collapse in={show} startingHeight={100}>
-								<Paragraph fontSize="xl" lineHeight={1.6}>
-									I started using a computer when I was 7
-									years old, I was obsessed with gaming! But
-									while I was only doing games, I developed
-									interests in software, I began to ask myself
-									about those programs on my desktop, I have
-									never checked them I was always going for
-									the game icons. The day I started to use
-									photoshop everything changed, I loved it and
-									I developed an interest in graphic design, I
-									thought that I will be doing that for the
-									rest of my life, but thought changed when I
-									got to college, I started programming, it
-									wasn't fun at first, I already knew HTML &
-									CSS and some JS but that wasn't helping me
-									understanding C# & C++, I didn't like
-									building apps for windows using WinForm so I
-									started work on my web skills and I picked
-									Node.js & React and never looked back.
-								</Paragraph>
-							</Collapse>
-							<LightMode>
-								<Button
-									size="sm"
-									onClick={handleToggle}
-									mt="1rem"
-									colorScheme="blue"
-									bg="blue.500"
+							<Paragraph fontSize="xl" lineHeight={1.6}>
+								I’m interested in exploring the space between
+								technology and design to solve problems. Being
+								from an interdisciplinary background, I feel
+								that I have an ability to draw unique insights
+								that lead to innovation in products.
+							</Paragraph>
+							<Divider
+								pt={4}
+								colorScheme={"whiteAlpha"}
+								borderColor="transparent"
+							/>
+							<Paragraph fontSize="xl" lineHeight={1.6}>
+								In my free time, I like learning and exploring
+								tech, listening to music, reading books (science
+								fiction, fantasy). If you are interested in my
+								other works related to design, please
+								visit&nbsp;
+								<Link
+									color="blue.500"
+									href="https://www.behance.net/tejabalu"
+									isExternal
+									fontWeight="500"
 								>
-									Show {show ? "Less" : "More"}
-								</Button>
-							</LightMode>
+									behance.net/tejabalu.
+								</Link>
+							</Paragraph>
 						</Box>
 						<Divider my={10} />
 					</SlideFade>
 					<SlideFade in={true} offsetY={80} delay={0.2}>
-						<Heading
-							as="h1"
-							fontSize={{ base: "24px", md: "30px", lg: "36px" }}
-							mb={3}
-						>
-							Cool Stuff
-						</Heading>
-						<Paragraph fontSize="xl" lineHeight={1.6}>
-							{coolStuff.map((item) => (
-								<Tag
-									size="lg"
-									colorScheme="blue"
-									key={item}
-									marginY={2}
-									marginRight={2}
-								>
-									{item}
-								</Tag>
-							))}
-						</Paragraph>
-						<Heading
-							as="h1"
-							fontSize={{ base: "24px", md: "30px", lg: "36px" }}
-							mt={10}
-							mb={3}
-						>
-							Meh..
-						</Heading>
-						<Paragraph fontSize="xl" lineHeight={1.6}>
-							{notCoolStuff.map((item) => (
-								<Tag
-									size="lg"
-									colorScheme="red"
-									key={item}
-									marginY={2}
-									marginRight={2}
-								>
-									{item}
-								</Tag>
-							))}
-						</Paragraph>
+						<Center>
+							<Paragraph
+								fontSize="xl"
+								lineHeight={1.6}
+								w="85%"
+								fontSize="1.2em"
+								fontStyle="italic"
+							>
+								“It's the questions we can't answer that teach
+								us the most. They teach us how to think. If you
+								give a man an answer, all he gains is a little
+								fact. But give him a question and he'll look for
+								his own answers.”
+								<br />- Patrick Rothfuss
+							</Paragraph>
+						</Center>
 					</SlideFade>
 				</Container>
 			</main>
