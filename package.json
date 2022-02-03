@@ -26,5 +26,8 @@
 		"react-markdown": "^8.0.0",
 		"source-map-loader": "^3.0.1",
 		"theme-ui": "^0.13.1"
+	},
+	"devDependencies": {
+		"typescript": "^4.5.5"
 	}
 }
