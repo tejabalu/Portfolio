@@ -10,6 +10,7 @@ import {
 
 import { FaEnvelope, FaFileAlt } from "react-icons/fa";
 import Paragraph from "../../Paragraph";
+import React from "react";
 
 const Profile = () => {
 	return (

@@ -11,9 +11,11 @@ import {
 	Tag,
 	Link,
 	Center,
+	useColorModeValue,
 } from "@chakra-ui/react";
-import Paragraph from "components/Paragraph";
+import Paragraph from "../components/Paragraph";
 import { useState } from "react";
+import React from "react";
 
 const NotWork = () => {
 	const [show, setShow] = useState(false);
@@ -110,8 +112,13 @@ const NotWork = () => {
 								fontSize="xl"
 								lineHeight={1.6}
 								w="85%"
-								fontSize="1.2em"
 								fontStyle="italic"
+								padding="1em"
+								rounded="md"
+								backgroundColor={useColorModeValue(
+									"gray.100",
+									"gray.800"
+								)}
 							>
 								“It's the questions we can't answer that teach
 								us the most. They teach us how to think. If you

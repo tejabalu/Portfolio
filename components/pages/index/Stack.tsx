@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 
 import Paragraph from "../../Paragraph";
+import React from "react";
 
 const toolsPm = [
 	{

@@ -1,9 +1,10 @@
 import Head from "next/head";
 import { Container, Divider } from "@chakra-ui/react";
 
-import Stack from "components/pages/index/Stack";
-import Experience from "components/pages/index/Experience";
-import Profile from "components/pages/index/Profile";
+import Stack from "../components/pages/index/Stack";
+import Experience from "../components/pages/index/Experience";
+import Profile from "../components/pages/index/Profile";
+import React from "react";
 
 export default function Home() {
 	return (

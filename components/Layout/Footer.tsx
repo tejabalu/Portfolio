@@ -10,6 +10,7 @@ import {
 	Icon,
 } from "@chakra-ui/react";
 import { SiChakraui } from "react-icons/si";
+import React from "react";
 
 import {
 	FaFacebook,

@@ -14,6 +14,7 @@ import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import DropdownMenu from "./extra/Menu";
 import Logo from "../Logo";
 import { useRouter } from "next/router";
+import React from "react";
 
 const Links = [
 	{
