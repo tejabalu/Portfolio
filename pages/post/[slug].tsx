@@ -3,6 +3,15 @@ import ReactMarkdown from "react-markdown";
 import { Container } from "@chakra-ui/react";
 import Head from "next/head";
 import NotionService from "../../services/notion-service";
+import Paragraph from "../../components/Paragraph";
+import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+
+const newTheme = {
+	p: (props) => {
+		const { children } = props;
+		return <Paragraph fontSize="lg">{children}</Paragraph>;
+	},
+};
 
 const Post = ({
 	markdown,
@@ -11,8 +20,12 @@ const Post = ({
 	return (
 		<>
 			<Container maxW={"6xl"}>
-				{post.title}
-				<ReactMarkdown>{markdown}</ReactMarkdown>
+				<Paragraph fontSize="xl">{post.title}</Paragraph>
+				<ReactMarkdown
+					components={ChakraUIRenderer(newTheme)}
+					children={markdown}
+					skipHtml
+				/>
 			</Container>
 		</>
 	);
