@@ -1,10 +1,18 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import ReactMarkdown from "react-markdown";
-import { Container } from "@chakra-ui/react";
+import { Container, Heading, SlideFade } from "@chakra-ui/react";
 import Head from "next/head";
 import NotionService from "../../services/notion-service";
 import Paragraph from "../../components/Paragraph";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+import {
+	HeadingRenderer,
+	ImageRenderer,
+	ParagraphRenderer,
+	LinkRenderer,
+	BlockquoteRenderer,
+	ListItemRenderer,
+} from "../../components/blogstyles/MarkdownRenderer";
 
 const newTheme = {
 	p: (props) => {
@@ -19,14 +27,27 @@ const Post = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	return (
 		<>
-			<Container maxW={"6xl"}>
-				<Paragraph fontSize="xl">{post.title}</Paragraph>
-				<ReactMarkdown
-					components={ChakraUIRenderer(newTheme)}
-					children={markdown}
-					skipHtml
-				/>
-			</Container>
+			<SlideFade in={true} offsetY={80}>
+				<Container maxW={"6xl"}>
+					<Paragraph fontSize="xl">{post.title}</Paragraph>
+					<ReactMarkdown
+						children={markdown}
+						components={{
+							h1: HeadingRenderer,
+							h2: HeadingRenderer,
+							h3: HeadingRenderer,
+							h4: HeadingRenderer,
+							h5: HeadingRenderer,
+							h6: HeadingRenderer,
+							p: ParagraphRenderer,
+							img: ImageRenderer,
+							a: LinkRenderer,
+							blockquote: BlockquoteRenderer,
+							li: ListItemRenderer,
+						}}
+					/>
+				</Container>
+			</SlideFade>
 		</>
 	);
 };
