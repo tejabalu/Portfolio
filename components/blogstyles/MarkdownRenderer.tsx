@@ -7,8 +7,14 @@ import {
 	Heading,
 	Image,
 	Link,
-	Text,
+	// Text,
 	Alert,
+	VStack,
+	useColorModeValue,
+	UnorderedList,
+	ListItem,
+	OrderedList,
+	color,
 } from "@chakra-ui/react";
 import Paragraph from "../Paragraph";
 
@@ -35,8 +41,15 @@ export function HeadingRenderer(props) {
 			);
 		case 3:
 			return (
-				<Heading as="h3" fontSize="3xl" fontWeight="bold">
+				<Heading as="h3" fontSize="3xl" fontWeight="bold" marginTop={4}>
 					{props.children}
+					<Box
+						height="1px"
+						bg={useColorModeValue("gray.400", "gray.700")}
+						marginTop={2}
+						marginBottom={4}
+						width="40%"
+					/>
 				</Heading>
 			);
 		case 4:
@@ -69,24 +82,41 @@ export function HeadingRenderer(props) {
 // export the image renderer
 export function ImageRenderer(props) {
 	return (
-		<Center width="80%">
+		<VStack width="80%" marginLeft={"auto"} marginRight={"auto"}>
 			<Image src={props.src} alt={props.alt} rounded={"md"} />
 			{/* add caption to image */}
-			{props.caption && (
-				<Text fontSize="sm" color="gray.500">
-					{props.caption}
-				</Text>
-			)}
-		</Center>
+			<Paragraph fontSize="sm" mt={margintop} fontStyle={"italic"}>
+				{props.alt}
+			</Paragraph>
+		</VStack>
 	);
 }
 
 // export the paragraph renderer
 export function ParagraphRenderer(props) {
 	return (
-		<Text fontSize="xl" marginTop={margintop}>
+		<Paragraph fontSize={"xl"} marginTop={margintop}>
 			{props.children}
-		</Text>
+		</Paragraph>
+	);
+}
+
+// export the strong text renderer
+export function StrongRenderer(props) {
+	return (
+		<span
+			style={{
+				fontWeight: "bold",
+				color: useColorModeValue("#2D3748", "#CBD5E0"),
+			}}
+		>
+			{/* fontWeight="bold"
+			fontSize={"xl"}
+			marginTop={margintop}
+			color={"white"} */}
+			{/* > */}
+			{props.children}
+		</span>
 	);
 }
 
@@ -104,16 +134,39 @@ export function BlockquoteRenderer(props) {
 			marginTop={margintop}
 			rounded={"sm"}
 		>
-			<Text marginTop={-margintop}>{props.children}</Text>
+			<Paragraph marginTop={-margintop}>{props.children}</Paragraph>
 		</Alert>
 	);
 }
 
-// export the list item renderer
-export function ListItemRenderer(props) {
+// export the ordered list item renderer
+export function OrderedListItemRenderer(props) {
 	return (
-		<Text fontSize="lg" fontWeight="bold">
-			{props.children}
-		</Text>
+		<OrderedList marginTop={-6}>
+			<ListItem>{props.children}</ListItem>
+		</OrderedList>
+	);
+}
+
+// export the unordered list item renderer
+export function UnorderedListItemRenderer(props) {
+	return (
+		<UnorderedList marginTop={-7}>
+			<ListItem color={useColorModeValue("gray.400", "gray.400")}>
+				{props.children}
+			</ListItem>
+		</UnorderedList>
+	);
+}
+
+// Hr renderer
+export function HrRenderer(props) {
+	return (
+		<Box
+			height="1px"
+			bg={useColorModeValue("gray.400", "gray.700")}
+			marginTop={4}
+			marginBottom={4}
+		/>
 	);
 }

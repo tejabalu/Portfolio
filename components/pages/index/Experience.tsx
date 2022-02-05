@@ -31,7 +31,7 @@ const Experience = () => {
 						as={BsCircleFill}
 						color="blue.500"
 						fontSize={10}
-						mt={2}
+						mt={2.5}
 					/>
 					<Box>
 						<Box fontSize={"xl"}>
@@ -80,7 +80,7 @@ const Experience = () => {
 						as={BsCircleFill}
 						color="blue.500"
 						fontSize={10}
-						mt={2}
+						mt={2.5}
 					/>
 					<Box>
 						<Box fontSize={"xl"}>
@@ -108,7 +108,7 @@ const Experience = () => {
 						as={BsCircleFill}
 						color="blue.500"
 						fontSize={10}
-						mt={2}
+						mt={2.5}
 					/>
 					<Box>
 						<Box fontSize={"xl"}>
@@ -137,7 +137,7 @@ const Experience = () => {
 						as={BsCircleFill}
 						color="blue.500"
 						fontSize={10}
-						mt={2}
+						mt={2.5}
 					/>
 					<Box>
 						<Box fontSize={"xl"}>

@@ -1,6 +1,6 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import ReactMarkdown from "react-markdown";
-import { Container, Heading, SlideFade } from "@chakra-ui/react";
+import { Container, Heading, SlideFade, VStack } from "@chakra-ui/react";
 import Head from "next/head";
 import NotionService from "../../services/notion-service";
 import Paragraph from "../../components/Paragraph";
@@ -11,7 +11,9 @@ import {
 	ParagraphRenderer,
 	LinkRenderer,
 	BlockquoteRenderer,
-	ListItemRenderer,
+	HrRenderer,
+	UnorderedListItemRenderer,
+	StrongRenderer,
 } from "../../components/blogstyles/MarkdownRenderer";
 
 const newTheme = {
@@ -29,7 +31,6 @@ const Post = ({
 		<>
 			<SlideFade in={true} offsetY={80}>
 				<Container maxW={"6xl"}>
-					<Paragraph fontSize="xl">{post.title}</Paragraph>
 					<ReactMarkdown
 						children={markdown}
 						components={{
@@ -43,7 +44,9 @@ const Post = ({
 							img: ImageRenderer,
 							a: LinkRenderer,
 							blockquote: BlockquoteRenderer,
-							li: ListItemRenderer,
+							li: UnorderedListItemRenderer,
+							hr: HrRenderer,
+							strong: StrongRenderer,
 						}}
 					/>
 				</Container>
