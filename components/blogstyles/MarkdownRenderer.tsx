@@ -161,8 +161,8 @@ export function HrRenderer(props) {
 		<Box
 			height="1px"
 			bg={useColorModeValue("gray.400", "gray.700")}
-			marginTop={-6}
-			marginBottom={4}
+			marginTop={-10}
+			marginBottom={8}
 		/>
 	);
 }
