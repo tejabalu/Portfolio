@@ -110,11 +110,6 @@ export function StrongRenderer(props) {
 				color: useColorModeValue("#2D3748", "#CBD5E0"),
 			}}
 		>
-			{/* fontWeight="bold"
-			fontSize={"xl"}
-			marginTop={margintop}
-			color={"white"} */}
-			{/* > */}
 			{props.children}
 		</span>
 	);
@@ -133,6 +128,7 @@ export function BlockquoteRenderer(props) {
 			variant="left-accent"
 			marginTop={margintop}
 			rounded={"sm"}
+			color={useColorModeValue("#2D3748", "#CBD5E0")}
 		>
 			<Paragraph marginTop={-margintop}>{props.children}</Paragraph>
 		</Alert>
