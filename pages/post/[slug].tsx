@@ -11,9 +11,9 @@ import {
 	ParagraphRenderer,
 	LinkRenderer,
 	BlockquoteRenderer,
-	HrRenderer,
-	UnorderedListItemRenderer,
 	StrongRenderer,
+	UnorderedListItemRenderer,
+	HrRenderer,
 } from "../../components/blogstyles/MarkdownRenderer";
 
 const newTheme = {
@@ -31,24 +31,28 @@ const Post = ({
 		<>
 			<SlideFade in={true} offsetY={80}>
 				<Container maxW={"6xl"}>
-					<ReactMarkdown
-						children={markdown}
-						components={{
-							h1: HeadingRenderer,
-							h2: HeadingRenderer,
-							h3: HeadingRenderer,
-							h4: HeadingRenderer,
-							h5: HeadingRenderer,
-							h6: HeadingRenderer,
-							p: ParagraphRenderer,
-							img: ImageRenderer,
-							a: LinkRenderer,
-							blockquote: BlockquoteRenderer,
-							li: UnorderedListItemRenderer,
-							hr: HrRenderer,
-							strong: StrongRenderer,
-						}}
-					/>
+					<Paragraph fontSize={"xl"}>
+						{
+							<ReactMarkdown
+								children={markdown}
+								components={{
+									h1: HeadingRenderer,
+									h2: HeadingRenderer,
+									h3: HeadingRenderer,
+									h4: HeadingRenderer,
+									h5: HeadingRenderer,
+									h6: HeadingRenderer,
+									p: ParagraphRenderer,
+									img: ImageRenderer,
+									a: LinkRenderer,
+									blockquote: BlockquoteRenderer,
+									li: UnorderedListItemRenderer,
+									hr: HrRenderer,
+									strong: StrongRenderer,
+								}}
+							/>
+						}
+					</Paragraph>
 				</Container>
 			</SlideFade>
 		</>

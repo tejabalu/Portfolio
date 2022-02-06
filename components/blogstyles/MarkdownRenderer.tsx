@@ -1,22 +1,17 @@
 import React, { Component } from "react";
 import {
-	Center,
 	Box,
-	Button,
-	Flex,
 	Heading,
 	Image,
 	Link,
-	// Text,
 	Alert,
 	VStack,
 	useColorModeValue,
 	UnorderedList,
 	ListItem,
 	OrderedList,
-	color,
 } from "@chakra-ui/react";
-import Paragraph from "../Paragraph";
+import Paragraph from "../../components/Paragraph";
 
 const margintop = "8";
 
@@ -29,19 +24,31 @@ export function HeadingRenderer(props) {
 					as="h1"
 					fontSize={{ base: "28px", md: "40px", lg: "48px" }}
 					mb={4}
+					color={useColorModeValue("black", "white")}
 				>
 					{props.children}
 				</Heading>
 			);
 		case 2:
 			return (
-				<Heading as="h2" fontSize="4xl" fontWeight="bold">
+				<Heading
+					as="h2"
+					fontSize="4xl"
+					fontWeight="bold"
+					color={useColorModeValue("black", "white")}
+				>
 					{props.children}
 				</Heading>
 			);
 		case 3:
 			return (
-				<Heading as="h3" fontSize="3xl" fontWeight="bold" marginTop={4}>
+				<Heading
+					as="h3"
+					fontSize="3xl"
+					fontWeight="bold"
+					marginTop={4}
+					color={useColorModeValue("black", "white")}
+				>
 					{props.children}
 					<Box
 						height="1px"
@@ -54,25 +61,45 @@ export function HeadingRenderer(props) {
 			);
 		case 4:
 			return (
-				<Heading as="h4" fontSize="2xl" fontWeight="bold">
+				<Heading
+					as="h4"
+					fontSize="2xl"
+					fontWeight="bold"
+					color={useColorModeValue("black", "white")}
+				>
 					{props.children}
 				</Heading>
 			);
 		case 5:
 			return (
-				<Heading as="h5" fontSize="xl" fontWeight="bold">
+				<Heading
+					as="h5"
+					fontSize="xl"
+					fontWeight="bold"
+					color={useColorModeValue("black", "white")}
+				>
 					{props.children}
 				</Heading>
 			);
 		case 6:
 			return (
-				<Heading as="h6" fontSize="lg" fontWeight="bold">
+				<Heading
+					as="h6"
+					fontSize="lg"
+					fontWeight="bold"
+					color={useColorModeValue("black", "white")}
+				>
 					{props.children}
 				</Heading>
 			);
 		default:
 			return (
-				<Heading as="h6" fontSize="lg" fontWeight="bold">
+				<Heading
+					as="h6"
+					fontSize="lg"
+					fontWeight="bold"
+					color={useColorModeValue("black", "white")}
+				>
 					{props.children}
 				</Heading>
 			);
