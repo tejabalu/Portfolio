@@ -1,6 +1,10 @@
 module.exports = {
 	images: {
-		domains: ["dl.airtable.com"],
+		domains: [
+			"dl.airtable.com",
+			"images.unsplash.com",
+			"s3.us-west-2.amazonaws.com",
+		],
 	},
 
 	module: {
