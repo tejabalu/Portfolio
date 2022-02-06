@@ -4,6 +4,7 @@ module.exports = {
 			"dl.airtable.com",
 			"images.unsplash.com",
 			"s3.us-west-2.amazonaws.com",
+			"raw.githubusercontent.com",
 		],
 	},
 
