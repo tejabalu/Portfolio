@@ -16,13 +16,6 @@ import {
 	HrRenderer,
 } from "../../components/blogstyles/MarkdownRenderer";
 
-const newTheme = {
-	p: (props) => {
-		const { children } = props;
-		return <Paragraph fontSize="lg">{children}</Paragraph>;
-	},
-};
-
 const Post = ({
 	markdown,
 	post,
