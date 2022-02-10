@@ -50,13 +50,13 @@ const NotWork = () => {
 				<title>Teja Balu | Not Work</title>
 				<meta
 					name="description"
-					content="Teja Balu | Program/Product Manager"
+					content="Teja Balu | SDE / Technical Product Manager"
 				/>
 				<meta property="og:type" content="website" />
 				<meta property="og:url" content="#" />
 				<meta
 					property="og:title"
-					content="Teja Balu | Program/Product Manager"
+					content="Teja Balu | SDE / Technical Product Manager"
 				/>
 				<meta property="og:image" content="/meta-image.jpg" />
 			</Head>
