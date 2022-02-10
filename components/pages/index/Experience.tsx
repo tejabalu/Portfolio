@@ -54,7 +54,7 @@ const Experience = () => {
 							<Divider pt="2" borderColor={"transparent"} />
 							Curriculum includes core concepts in technology
 							development, entrepreneurship, and design thinking,
-							ideal for product/Technical product management.
+							ideal for Software and Technical Product Management.
 						</Paragraph>
 					</Box>
 				</ListItem>

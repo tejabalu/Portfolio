@@ -10,6 +10,9 @@ import {
 	UnorderedList,
 	ListItem,
 	OrderedList,
+	Button,
+	LightMode,
+	ButtonGroup,
 } from "@chakra-ui/react";
 import Paragraph from "../../components/Paragraph";
 
@@ -144,7 +147,27 @@ export function StrongRenderer(props) {
 
 // export the link renderer
 export function LinkRenderer(props) {
-	return <Link href={props.href}>{props.children}</Link>;
+	return (
+		<Box mt={10}>
+			<LightMode>
+				<ButtonGroup>
+					<Button
+						colorScheme="blue"
+						bg="blue.500"
+						href={props.href}
+						target="_blank"
+						borderRadius={5}
+						p={3}
+						as="a"
+					>
+						{props.children}
+					</Button>
+				</ButtonGroup>
+			</LightMode>
+		</Box>
+	);
+
+	// <Link href={props.href}>{props.children}</Link>;
 }
 
 // export the blockquote renderer

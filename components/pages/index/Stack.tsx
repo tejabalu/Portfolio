@@ -8,6 +8,7 @@ import {
 	FaGitAlt,
 	FaPython,
 } from "react-icons/fa";
+import { Icon } from "@iconify/react";
 
 import Paragraph from "../../Paragraph";
 import React from "react";
@@ -15,15 +16,15 @@ import React from "react";
 const toolsPm = [
 	{
 		name: "Agile Development",
-		icon: <FaNodeJs fontSize="20px" />,
+		icon: <Icon icon="uiw:reload" />,
 	},
 	{
 		name: "A/B Testing",
-		icon: <FaJs fontSize="20px" />,
+		icon: <Icon icon="healthicons:i-exam-multiple-choice" />,
 	},
 	{
 		name: "Prioritization & Strategy",
-		icon: <FaReact fontSize="20px" />,
+		icon: <Icon icon="mdi:priority-high" />,
 	},
 ];
 
@@ -50,22 +51,22 @@ const tools = [
 	},
 	{
 		name: "Machine Learning",
-		icon: <FaPython fontSize="20px" />,
+		icon: <Icon icon="carbon:machine-learning-model" />,
 	},
 ];
 
 const toolsMech = [
 	{
 		name: "Fusion 360",
-		icon: <FaReact fontSize="20px" />,
+		icon: <Icon icon="file-icons:3d-model" />,
 	},
 	{
 		name: "3D Printing",
-		icon: <FaJs fontSize="20px" />,
+		icon: <Icon icon="mdi:printer-3d-nozzle" />,
 	},
 	{
 		name: "Fabrication",
-		icon: <FaGitAlt fontSize="20px" />,
+		icon: <Icon icon="ic:twotone-precision-manufacturing" />,
 	},
 ];
 
