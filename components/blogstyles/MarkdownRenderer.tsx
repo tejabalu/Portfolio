@@ -148,7 +148,7 @@ export function StrongRenderer(props) {
 // export the link renderer
 export function LinkRenderer(props) {
 	return (
-		<Box mt={10}>
+		<Box>
 			<LightMode>
 				<ButtonGroup>
 					<Button
