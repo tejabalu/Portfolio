@@ -42,25 +42,15 @@ const Footer = () => (
 				<ButtonGroup variant="ghost">
 					<IconButton
 						as="a"
-						href="#"
-						aria-label="Facebook"
-						icon={<FaFacebook fontSize="20px" />}
-					/>
-					<IconButton
-						as="a"
-						href="#"
-						aria-label="instagram"
-						icon={<FaInstagram fontSize="20px" />}
-					/>
-					<IconButton
-						as="a"
-						href="#"
+						href="https://www.linkedin.com/in/tejabalu/"
+						target={`_blank`}
 						aria-label="Linkedin"
 						icon={<FaLinkedin fontSize="20px" />}
 					/>
 					<IconButton
 						as="a"
-						href="#"
+						href="https://github.com/tejabalu"
+						target={`_blank`}
 						aria-label="Github"
 						icon={<FaGithub fontSize="20px" />}
 					/>
@@ -81,7 +71,8 @@ const Footer = () => (
 					rounded="md"
 					aria-label="Github Repo"
 					rel="noopener"
-					href="#"
+					href="https://github.com/tejabalu/Portfolio"
+					target="_blank"
 					isExternal
 					icon={<FaGithub fontSize="18px" />}
 				/>
