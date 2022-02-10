@@ -81,6 +81,26 @@ const Stack = () => {
 				Skills
 			</Heading>
 			<Paragraph fontSize="xl" lineHeight={1.6}>
+				As part of my masters and my time prior as a self-taught
+				programmer, these are the technologies and stacks I'm interested
+				in, and actively learning.
+			</Paragraph>
+			<Grid
+				mt={6}
+				templateColumns={[
+					"1fr",
+					"1fr",
+					"repeat(2, 1fr)",
+					"repeat(3, 1fr)",
+				]}
+				mb={6}
+				gap={5}
+			>
+				{tools.map((tool) => (
+					<ToolCard tool={tool} key={tool?.name} />
+				))}
+			</Grid>
+			<Paragraph fontSize="xl" lineHeight={1.6}>
 				Having worked as a Project Manager, these were some of the
 				skills I applied at work.
 			</Paragraph>
@@ -96,25 +116,6 @@ const Stack = () => {
 				gap={5}
 			>
 				{toolsPm.map((tool) => (
-					<ToolCard tool={tool} key={tool?.name} />
-				))}
-			</Grid>
-			<Paragraph fontSize="xl" lineHeight={1.6}>
-				Being a self-taught programmer, these are the technologies and
-				stacks I'm interested in, and actively learning.
-			</Paragraph>
-			<Grid
-				mt={6}
-				templateColumns={[
-					"1fr",
-					"1fr",
-					"repeat(2, 1fr)",
-					"repeat(3, 1fr)",
-				]}
-				mb={6}
-				gap={5}
-			>
-				{tools.map((tool) => (
 					<ToolCard tool={tool} key={tool?.name} />
 				))}
 			</Grid>
