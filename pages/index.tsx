@@ -13,14 +13,14 @@ export default function Home() {
 				<title>Teja Balu | Home</title>
 				<meta
 					name="description"
-					content="Teja Balu | Program/Product Manager"
+					content="Teja Balu | SDE / Technical Product Manager"
 				/>
 				<meta property="og:type" content="website" />
 				<meta name="robots" content="follow, index" />
 				<meta property="og:url" content="https://tejabalu.com/" />
 				<meta
 					property="og:title"
-					content="Teja Balu | Program/Product Manager"
+					content="Teja Balu | SDE / Technical Product Manager"
 				/>
 				<meta property="og:image" content="/meta-image.jpg" />
 			</Head>
