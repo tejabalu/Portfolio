@@ -112,7 +112,7 @@ const Experience = () => {
 					/>
 					<Box>
 						<Box fontSize={"xl"}>
-							Prototyping Labs Assistnat,&nbsp;
+							Prototyping Labs Technical Assistant,&nbsp;
 							<Link
 								color="blue.500"
 								href="https://gixnetwork.org/"
