@@ -23,7 +23,7 @@ const Post = ({
 	return (
 		<>
 			<SlideFade in={true} offsetY={80}>
-				<Container maxW={"6xl"}>
+				<Container maxW={"container.lg"}>
 					<Paragraph fontSize={"xl"}>
 						{
 							<ReactMarkdown
