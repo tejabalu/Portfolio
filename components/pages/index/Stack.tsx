@@ -82,8 +82,7 @@ const Stack = () => {
 			</Heading>
 			<Paragraph fontSize="xl" lineHeight={1.6}>
 				As part of my masters and my time prior as a self-taught
-				programmer, these are the technologies and stacks I'm interested
-				in, and actively learning.
+				programmer, these are my technologies and stacks.
 			</Paragraph>
 			<Grid
 				mt={6}
@@ -101,8 +100,8 @@ const Stack = () => {
 				))}
 			</Grid>
 			<Paragraph fontSize="xl" lineHeight={1.6}>
-				Having worked as a Project Manager, these were some of the
-				skills I applied at work.
+				These were some of the skills I applied at work as a Project
+				Manager.
 			</Paragraph>
 			<Grid
 				mt={6}
@@ -120,8 +119,7 @@ const Stack = () => {
 				))}
 			</Grid>
 			<Paragraph fontSize="xl" lineHeight={1.6}>
-				Having majored in mechanical engineering, these are the skills I
-				explore in my free time.
+				These are the skills I explored as a mechanical engineer.
 			</Paragraph>
 			<Grid
 				mt={6}

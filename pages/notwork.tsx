@@ -77,13 +77,12 @@ const NotWork = () => {
 							</Heading>
 							<Paragraph fontSize="xl" lineHeight={1.6}>
 								I’m interested in exploring the space between
-								technology and design to solve problems. Being
-								from an interdisciplinary background, I feel
-								that I have an ability to draw unique insights
-								that lead to innovation in products. In my free
-								time, I like learning and exploring tech,
-								listening to music, reading books (science
-								fiction, fantasy).
+								technology and design to solve problems. My
+								interdisciplinary background gives me the
+								ability to draw unique insights that lead to
+								product innovation. In my free time, I like
+								learning and exploring tech, listening to music,
+								reading books (science fiction, fantasy).
 							</Paragraph>
 							<Divider
 								pt={4}
