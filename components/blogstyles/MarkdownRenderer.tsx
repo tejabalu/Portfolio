@@ -13,6 +13,7 @@ import {
 	Button,
 	LightMode,
 	ButtonGroup,
+	textDecoration,
 } from "@chakra-ui/react";
 import Paragraph from "../../components/Paragraph";
 
@@ -148,23 +149,15 @@ export function StrongRenderer(props) {
 // export the link renderer
 export function LinkRenderer(props) {
 	return (
-		<Box>
-			<LightMode>
-				<ButtonGroup>
-					<Button
-						colorScheme="blue"
-						bg="blue.500"
-						href={props.href}
-						target="_blank"
-						borderRadius={5}
-						p={3}
-						as="a"
-					>
-						{props.children}
-					</Button>
-				</ButtonGroup>
-			</LightMode>
-		</Box>
+		<Link
+			href={props.href}
+			isExternal={true}
+			fontStyle={"italic"}
+			textDecorationLine={"underline"}
+			color={useColorModeValue("#2D3748", "#CBD5E0")}
+		>
+			{props.children}
+		</Link>
 	);
 
 	// <Link href={props.href}>{props.children}</Link>;

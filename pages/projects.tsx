@@ -49,8 +49,7 @@ const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 						marginBottom={-4}
 						paddingLeft={10}
 					>
-						These are a collection of projects I did over the years,
-						some of which are currently under progress.
+						These are a collection of projects I did over the years.
 					</Paragraph>
 				</SlideFade>
 				<SlideFade in={true} offsetY={80} delay={0.2}>
