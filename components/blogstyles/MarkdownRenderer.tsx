@@ -125,18 +125,6 @@ export function ImageRenderer(props) {
 	const [width, setWidth] = useState(null);
 	const [height, setHeight] = useState(null);
 
-	// useEffect(() => {
-	// 	const img = new (window as any).Image();
-	// 	img.src = props.src;
-	// 	console.log("test2");
-	// 	setWidth(img.width);
-	// 	setHeight(img.height);
-	// });
-
-	// if (width === null || height === null) {
-	// 	return <Box>Loading...</Box>;
-	// }
-
 	return (
 		<VStack
 			width="80%"
@@ -219,8 +207,6 @@ export function LinkRenderer(props) {
 			{props.children}
 		</Link>
 	);
-
-	// <Link href={props.href}>{props.children}</Link>;
 }
 
 // export the blockquote renderer
