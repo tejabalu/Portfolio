@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import {
 	Box,
 	Heading,
@@ -16,7 +16,15 @@ import {
 	textDecoration,
 } from "@chakra-ui/react";
 import Paragraph from "../../components/Paragraph";
-
+import {
+	CustomGallery,
+	DefaultLayout,
+	Gallery,
+	Item,
+} from "react-photoswipe-gallery";
+import "photoswipe/dist/photoswipe.css";
+import "photoswipe/dist/default-skin/default-skin.css";
+import PhotoswipeUIDefault from "photoswipe/dist/photoswipe-ui-default";
 const margintop = "8";
 
 // export the heading renderer using the headingStyles
@@ -112,11 +120,43 @@ export function HeadingRenderer(props) {
 
 // export the image renderer
 export function ImageRenderer(props) {
+	console.log("test");
+	const LayoutRef = React.useRef();
+	let width = null;
+	let height = null;
+	if (typeof window !== "undefined") {
+		const image = new (window as any).Image();
+		image.src = props.src;
+		width = image.width;
+		height = image.height;
+	}
+
 	return (
 		<VStack width="80%" marginLeft={"auto"} marginRight={"auto"}>
-			<Image src={props.src} alt={props.alt} rounded={"md"} />
-			{/* add caption to image */}
-			<Paragraph fontSize="sm" mt={margintop} fontStyle={"italic"}>
+			<CustomGallery layoutRef={LayoutRef} ui={PhotoswipeUIDefault}>
+				<Item
+					original={props.src}
+					thumbnail={props.src}
+					width={width}
+					height={height}
+				>
+					{({ ref, open }) => (
+						<Image
+							ref={props.ref}
+							src={props.src}
+							onClick={open}
+							rounded="md"
+						/>
+					)}
+				</Item>
+			</CustomGallery>
+			<DefaultLayout
+				shareButton={false}
+				zoomButton={false}
+				fullscreenButton={false}
+				ref={LayoutRef}
+			/>
+			<Paragraph fontSize="sm" fontStyle={"italic"}>
 				{props.alt}
 			</Paragraph>
 		</VStack>
