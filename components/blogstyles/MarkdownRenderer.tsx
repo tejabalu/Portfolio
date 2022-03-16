@@ -124,17 +124,15 @@ export function ImageRenderer(props) {
 	const LayoutRef = React.useRef();
 	const [width, setData] = useState(null);
 	const [height, setHeight] = useState(null);
-	const [isLoading, setLoading] = useState(false);
 
 	useEffect(() => {
-		setLoading(true);
 		const img = new (window as any).Image();
 		img.src = props.src;
-		if (window !== undefined) {
-			console.log("test2");
-			setData(img.width);
-			setHeight(img.height);
-		}
+		console.log("test2");
+		setData(img.width);
+		setHeight(img.height);
+		// if (window !== undefined) {
+		// }
 	});
 
 	return (
