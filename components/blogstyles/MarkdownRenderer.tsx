@@ -122,21 +122,27 @@ export function HeadingRenderer(props) {
 export function ImageRenderer(props) {
 	console.log("test");
 	const LayoutRef = React.useRef();
-	const [width, setData] = useState(null);
+	const [width, setWidth] = useState(null);
 	const [height, setHeight] = useState(null);
 
 	useEffect(() => {
 		const img = new (window as any).Image();
 		img.src = props.src;
 		console.log("test2");
-		setData(img.width);
+		setWidth(img.width);
 		setHeight(img.height);
 		// if (window !== undefined) {
 		// }
 	});
 
 	return (
-		<VStack width="80%" marginLeft={"auto"} marginRight={"auto"}>
+		<VStack
+			width="80%"
+			marginLeft={"auto"}
+			marginRight={"auto"}
+			setWidth={setWidth}
+			setHeight={setHeight}
+		>
 			<CustomGallery layoutRef={LayoutRef} ui={PhotoswipeUIDefault}>
 				<Item
 					original={props.src}
