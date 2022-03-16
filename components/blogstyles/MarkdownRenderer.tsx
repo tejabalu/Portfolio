@@ -125,19 +125,17 @@ export function ImageRenderer(props) {
 	const [width, setWidth] = useState(null);
 	const [height, setHeight] = useState(null);
 
-	useEffect(() => {
-		const img = new (window as any).Image();
-		img.src = props.src;
-		console.log("test2");
-		setWidth(img.width);
-		setHeight(img.height);
-		// if (window !== undefined) {
-		// }
-	});
+	// useEffect(() => {
+	// 	const img = new (window as any).Image();
+	// 	img.src = props.src;
+	// 	console.log("test2");
+	// 	setWidth(img.width);
+	// 	setHeight(img.height);
+	// });
 
-	if (width === null || height === null) {
-		return <Box>Loading...</Box>;
-	}
+	// if (width === null || height === null) {
+	// 	return <Box>Loading...</Box>;
+	// }
 
 	return (
 		<VStack
