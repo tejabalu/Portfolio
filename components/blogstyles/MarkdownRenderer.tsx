@@ -135,6 +135,10 @@ export function ImageRenderer(props) {
 		// }
 	});
 
+	if (width === null || height === null) {
+		return <Box>Loading...</Box>;
+	}
+
 	return (
 		<VStack
 			width="80%"
@@ -142,6 +146,14 @@ export function ImageRenderer(props) {
 			marginRight={"auto"}
 			setWidth={setWidth}
 			setHeight={setHeight}
+			onLoad={() => {
+				console.log("test3");
+				const image = new (window as any).Image();
+				image.src = props.src;
+				setWidth(image.width);
+				setHeight(image.height);
+				console.log(width, height);
+			}}
 		>
 			<CustomGallery layoutRef={LayoutRef} ui={PhotoswipeUIDefault}>
 				<Item
