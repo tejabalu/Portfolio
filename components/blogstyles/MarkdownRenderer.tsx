@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from "react";
+import React, { Component, useEffect, useState } from "react";
 import {
 	Box,
 	Heading,
@@ -122,14 +122,20 @@ export function HeadingRenderer(props) {
 export function ImageRenderer(props) {
 	console.log("test");
 	const LayoutRef = React.useRef();
-	let width = null;
-	let height = null;
-	if (typeof window !== "undefined") {
-		const image = new (window as any).Image();
-		image.src = props.src;
-		width = image.width;
-		height = image.height;
-	}
+	const [width, setData] = useState(null);
+	const [height, setHeight] = useState(null);
+	const [isLoading, setLoading] = useState(false);
+
+	useEffect(() => {
+		setLoading(true);
+		const img = new (window as any).Image();
+		img.src = props.src;
+		if (window !== undefined) {
+			console.log("test2");
+			setData(img.width);
+			setHeight(img.height);
+		}
+	});
 
 	return (
 		<VStack width="80%" marginLeft={"auto"} marginRight={"auto"}>
@@ -140,7 +146,7 @@ export function ImageRenderer(props) {
 					width={width}
 					height={height}
 				>
-					{({ ref, open }) => (
+					{({ open }) => (
 						<Image
 							ref={props.ref}
 							src={props.src}
@@ -248,4 +254,7 @@ export function HrRenderer(props) {
 			marginBottom={8}
 		/>
 	);
+}
+function componentDidMount() {
+	throw new Error("Function not implemented.");
 }
