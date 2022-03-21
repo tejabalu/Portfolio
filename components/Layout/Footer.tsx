@@ -18,6 +18,7 @@ import {
 	FaLinkedin,
 	FaGithub,
 	FaReact,
+	FaBehance,
 } from "react-icons/fa";
 import Logo from "../Logo";
 
@@ -31,14 +32,17 @@ const Footer = () => (
 		px={{ base: "4", md: "8" }}
 	>
 		<Container maxW="container.lg">
+			<Divider pt={2} />
 			<Stack
 				direction="row"
-				spacing="4"
 				align="center"
 				justify="space-between"
-				pb={5}
+				pt={5}
 			>
-				<Logo />
+				<Text fontSize="md">
+					&copy; {new Date().getFullYear()} | Built by Teja Balu using
+					Next.js, Chakra UI, and Notion.
+				</Text>
 				<ButtonGroup variant="ghost">
 					<IconButton
 						as="a"
@@ -48,34 +52,26 @@ const Footer = () => (
 						icon={<FaLinkedin fontSize="20px" />}
 					/>
 					<IconButton
-						as="a"
-						href="https://github.com/tejabalu"
-						target={`_blank`}
-						aria-label="Github"
-						icon={<FaGithub fontSize="20px" />}
+						as={Link}
+						rounded="md"
+						aria-label="Github Repo"
+						rel="noopener"
+						href="https://github.com/tejabalu/Portfolio"
+						target="_blank"
+						isExternal
+						icon={<FaGithub fontSize="18px" />}
+					/>
+					<IconButton
+						as={Link}
+						rounded="md"
+						aria-label="Behance"
+						rel="noopener"
+						href="https://www.behance.net/tejabalu"
+						target="_blank"
+						isExternal
+						icon={<FaBehance fontSize="18px" />}
 					/>
 				</ButtonGroup>
-			</Stack>
-			<Divider pt={2} />
-			<Stack
-				direction="row"
-				align="center"
-				justify="space-between"
-				pt={5}
-			>
-				<Text fontSize="md">
-					&copy; {new Date().getFullYear()} | Teja Balu
-				</Text>
-				<IconButton
-					as={Link}
-					rounded="md"
-					aria-label="Github Repo"
-					rel="noopener"
-					href="https://github.com/tejabalu/Portfolio"
-					target="_blank"
-					isExternal
-					icon={<FaGithub fontSize="18px" />}
-				/>
 			</Stack>
 		</Container>
 	</Box>

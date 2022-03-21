@@ -162,7 +162,7 @@ const Experience = () => {
 								fontWeight="500"
 							>
 								Riku
-							</Link>{" "}
+							</Link>
 							, an automatic rice and curry making machine.
 						</Paragraph>
 					</Box>
