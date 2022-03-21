@@ -10,10 +10,6 @@ import {
 	UnorderedList,
 	ListItem,
 	OrderedList,
-	Button,
-	LightMode,
-	ButtonGroup,
-	textDecoration,
 } from "@chakra-ui/react";
 import Paragraph from "../../components/Paragraph";
 import {
@@ -120,7 +116,6 @@ export function HeadingRenderer(props) {
 
 // export the image renderer
 export function ImageRenderer(props) {
-	console.log("test");
 	const LayoutRef = React.useRef();
 	const [width, setWidth] = useState(null);
 	const [height, setHeight] = useState(null);
@@ -154,13 +149,13 @@ export function ImageRenderer(props) {
 							src={props.src}
 							onClick={open}
 							rounded="md"
+							cursor="pointer"
 						/>
 					)}
 				</Item>
 			</CustomGallery>
 			<DefaultLayout
 				shareButton={false}
-				zoomButton={false}
 				fullscreenButton={false}
 				ref={LayoutRef}
 			/>
