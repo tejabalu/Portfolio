@@ -27,13 +27,12 @@ export default function Home() {
 			</Head>
 			<main>
 				<Container maxW="container.lg" mt={["5", "10"]}>
-					<HeroSection />
-					<Divider my={10} />
 					<Profile />
 					<Divider my={10} />
 					<Stack />
 					<Divider my={10} />
 					<Experience />
+					<HeroSection />
 				</Container>
 			</main>
 		</div>
