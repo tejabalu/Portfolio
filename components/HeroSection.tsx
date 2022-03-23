@@ -11,15 +11,15 @@ const HeroSection = () => {
 					rounded={"xl"}
 					marginBottom={"2em"}
 					marginTop={"-2em"}
-					width={"80%"}
+					width={["100%", "100%", "80%", "80%"]}
 				>
 					<iframe
 						src="https://my.spline.design/glasstypecopy-7299a9cefc82e907fffed6caed00ae11/"
 						frameBorder="0"
-						width="120%"
+						width="130%"
 						height="400em"
 						style={{
-							marginLeft: "-10%",
+							marginLeft: "-15%",
 						}}
 					></iframe>
 				</Box>
