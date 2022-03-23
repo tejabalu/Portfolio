@@ -29,6 +29,10 @@ export function HeadingRenderer(props) {
 		case 1:
 			return (
 				<Heading
+					id={props.children
+						.toString()
+						.toLowerCase()
+						.replace(/\s/g, "-")}
 					as="h1"
 					fontSize={{ base: "28px", md: "40px", lg: "48px" }}
 					mb={4}
@@ -40,6 +44,10 @@ export function HeadingRenderer(props) {
 		case 2:
 			return (
 				<Heading
+					id={props.children
+						.toString()
+						.toLowerCase()
+						.replace(/\s/g, "-")}
 					as="h2"
 					fontSize="4xl"
 					fontWeight="bold"
@@ -51,6 +59,10 @@ export function HeadingRenderer(props) {
 		case 3:
 			return (
 				<Heading
+					id={props.children
+						.toString()
+						.toLowerCase()
+						.replace(/\s/g, "-")}
 					as="h3"
 					fontSize="3xl"
 					fontWeight="bold"
@@ -70,6 +82,10 @@ export function HeadingRenderer(props) {
 		case 4:
 			return (
 				<Heading
+					id={props.children
+						.toString()
+						.toLowerCase()
+						.replace(/\s/g, "-")}
 					as="h4"
 					fontSize="2xl"
 					fontWeight="bold"
@@ -81,6 +97,10 @@ export function HeadingRenderer(props) {
 		case 5:
 			return (
 				<Heading
+					id={props.children
+						.toString()
+						.toLowerCase()
+						.replace(/\s/g, "-")}
 					as="h5"
 					fontSize="xl"
 					fontWeight="bold"
@@ -92,6 +112,10 @@ export function HeadingRenderer(props) {
 		case 6:
 			return (
 				<Heading
+					id={props.children
+						.toString()
+						.toLowerCase()
+						.replace(/\s/g, "-")}
 					as="h6"
 					fontSize="lg"
 					fontWeight="bold"
@@ -103,6 +127,10 @@ export function HeadingRenderer(props) {
 		default:
 			return (
 				<Heading
+					id={props.children
+						.toString()
+						.toLowerCase()
+						.replace(/\s/g, "-")}
 					as="h6"
 					fontSize="lg"
 					fontWeight="bold"
@@ -249,7 +277,4 @@ export function HrRenderer(props) {
 			marginBottom={8}
 		/>
 	);
-}
-function componentDidMount() {
-	throw new Error("Function not implemented.");
 }

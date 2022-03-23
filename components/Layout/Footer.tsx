@@ -8,6 +8,7 @@ import {
 	Link,
 	Divider,
 	Icon,
+	useColorModeValue,
 } from "@chakra-ui/react";
 import { SiChakraui } from "react-icons/si";
 import React from "react";
@@ -32,7 +33,10 @@ const Footer = () => (
 		px={{ base: "4", md: "8" }}
 	>
 		<Container maxW="container.lg">
-			<Divider pt={2} />
+			<Divider
+				pt={2}
+				borderColor={useColorModeValue("gray.400", "gray.700")}
+			/>
 			<Stack
 				direction="row"
 				align="center"

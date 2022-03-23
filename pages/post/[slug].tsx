@@ -1,10 +1,17 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import ReactMarkdown from "react-markdown";
-import { Container, Heading, SlideFade, VStack } from "@chakra-ui/react";
-import Head from "next/head";
+import {
+	Box,
+	Container,
+	Divider,
+	Flex,
+	HStack,
+	SlideFade,
+	Spacer,
+	useColorModeValue,
+} from "@chakra-ui/react";
 import NotionService from "../../services/notion-service";
 import Paragraph from "../../components/Paragraph";
-import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 import {
 	HeadingRenderer,
 	ImageRenderer,
@@ -15,37 +22,59 @@ import {
 	UnorderedListItemRenderer,
 	HrRenderer,
 } from "../../components/blogstyles/MarkdownRenderer";
+import tableOfContents from "../../components/blogstyles/toc";
 
 const Post = ({
 	markdown,
 	post,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+	const colorModeValue = useColorModeValue("gray.400", "gray.700");
 	return (
 		<>
 			<SlideFade in={true} offsetY={80}>
-				<Container maxW={"container.lg"}>
-					<Paragraph fontSize={"xl"}>
-						{
-							<ReactMarkdown
-								children={markdown}
-								components={{
-									h1: HeadingRenderer,
-									h2: HeadingRenderer,
-									h3: HeadingRenderer,
-									h4: HeadingRenderer,
-									h5: HeadingRenderer,
-									h6: HeadingRenderer,
-									p: ParagraphRenderer,
-									img: ImageRenderer,
-									a: LinkRenderer,
-									blockquote: BlockquoteRenderer,
-									li: UnorderedListItemRenderer,
-									hr: HrRenderer,
-									strong: StrongRenderer,
-								}}
-							/>
-						}
-					</Paragraph>
+				<Container maxW={"container.xl"} display={"flex"}>
+					<Box
+						width={"35%"}
+						paddingRight={4}
+						paddingTop={4}
+						display={["none", "none", "flex", "flex"]}
+						flexDirection={"column"}
+					>
+						{tableOfContents()}
+					</Box>
+					<Box width={"100%"} display="flex">
+						<Divider
+							width={"100%"}
+							orientation="vertical"
+							flexBasis="1"
+							paddingLeft={6}
+							display={["none", "none", "block", "block"]}
+							borderColor={colorModeValue}
+						/>
+						<Paragraph fontSize={"xl"}>
+							{
+								<ReactMarkdown
+									children={markdown}
+									components={{
+										h1: HeadingRenderer,
+										h2: HeadingRenderer,
+										h3: HeadingRenderer,
+										h4: HeadingRenderer,
+										h5: HeadingRenderer,
+										h6: HeadingRenderer,
+										p: ParagraphRenderer,
+										img: ImageRenderer,
+										a: LinkRenderer,
+										blockquote: BlockquoteRenderer,
+										li: UnorderedListItemRenderer,
+										hr: HrRenderer,
+										strong: StrongRenderer,
+									}}
+								/>
+							}
+						</Paragraph>
+					</Box>
+					<Flex alignItems={"top"} direction={"row"}></Flex>
 				</Container>
 			</SlideFade>
 		</>
@@ -72,7 +101,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 export async function getStaticPaths() {
 	const notionService = new NotionService();
-
+	// set border color based on colorModeValue (light/dark)
 	const posts = await notionService.getPublishedBlogPosts();
 
 	// Because we are generating static paths, you will have to redeploy your site whenever

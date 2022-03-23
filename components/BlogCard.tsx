@@ -71,6 +71,11 @@ const BlogCard: FunctionComponent<BlogCardProps> = ({ post }) => {
 	return (
 		<>
 			<SlideFade in={true} offsetY={80}>
+				<Divider
+					mt={8}
+					// change color based on color mode
+					borderColor={useColorModeValue("gray.400", "gray.700")}
+				/>
 				<Container maxW={"container.lg"} p="8">
 					<Box
 						marginTop={{ base: "1", sm: "5" }}
@@ -160,11 +165,6 @@ const BlogCard: FunctionComponent<BlogCardProps> = ({ post }) => {
 						</Box>
 					</Box>
 				</Container>
-				<Divider
-					mt={8}
-					// change color based on color mode
-					borderColor={useColorModeValue("gray.400", "gray.700")}
-				/>
 			</SlideFade>
 		</>
 	);
