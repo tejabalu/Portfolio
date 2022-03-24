@@ -44,7 +44,7 @@ const Footer = () => (
 				pt={5}
 			>
 				<Text fontSize="md">
-					&copy; {new Date().getFullYear()} | Built by Teja Balu using
+					&copy; Teja Balu, {new Date().getFullYear()} | Built using
 					Next.js, Chakra UI, and Notion.
 				</Text>
 				<ButtonGroup variant="ghost">
