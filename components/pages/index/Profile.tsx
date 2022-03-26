@@ -24,7 +24,7 @@ const Profile = () => {
 					Hey, I’m Teja Balu
 				</Heading>
 				<Paragraph fontSize="2xl" lineHeight={1.6}>
-					I'm currently doing my {""}
+					I'm currently studying {""}
 					<Link
 						color="blue.500"
 						href="https://gixnetwork.org/program/msti/"

@@ -121,13 +121,13 @@ const Experience = () => {
 							>
 								Global Innovation Exchange, Bellevue
 							</Link>{" "}
-							(2019 - 2021)
+							(Nov 2021 - Present)
 						</Box>
 						<Paragraph fontSize="lg" pl={3}>
 							<Divider pt="2" borderColor={"transparent"} />
 							Operate various prototyping equipments and tools
-							(PCB Fabricating, CNC Milling, 3D printing, Laser
-							cutter).
+							(PCB Fabrication, CNC Milling, 3D printing, Laser
+							cutting).
 						</Paragraph>
 					</Box>
 				</ListItem>
