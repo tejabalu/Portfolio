@@ -55,7 +55,7 @@ const Profile = () => {
 							<Button
 								colorScheme="blue"
 								bg="blue.500"
-								href="https://drive.google.com/file/d/1EA3OwzwLEq4TFOyWExE3CYx_hftd49hv/view?usp=sharing/"
+								href="https://drive.google.com/file/d/1dtXLfiUPWg4OC0NnAxF5MQVyrih2oZVK/view"
 								target={`_blank`}
 								borderRadius={5}
 								p={3}
