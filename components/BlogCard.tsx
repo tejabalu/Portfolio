@@ -62,7 +62,7 @@ interface BlogAuthorProps {
 export const BlogAuthor: React.FC<BlogAuthorProps> = (props) => {
 	return (
 		<HStack marginTop="2" spacing="2" display="flex" alignItems="center">
-			<Text fontWeight="medium">{dayjs(props.date).format("LL")}</Text>
+			<Text fontWeight="medium">{props.date}</Text>
 		</HStack>
 	);
 };
@@ -158,9 +158,7 @@ const BlogCard: FunctionComponent<BlogCardProps> = ({ post }) => {
 								display="flex"
 								alignItems="center"
 							>
-								<Text fontWeight="medium">
-									{dayjs(post.date).format("LL")}
-								</Text>
+								<Text fontWeight="medium">{post.date}</Text>
 							</HStack>
 						</Box>
 					</Box>

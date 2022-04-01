@@ -26,8 +26,8 @@ export default class NotionService {
 			},
 			sorts: [
 				{
-					property: "Updated",
-					direction: "descending",
+					property: "Author",
+					direction: "ascending",
 				},
 			],
 		});
@@ -55,8 +55,8 @@ export default class NotionService {
 			},
 			sorts: [
 				{
-					property: "Updated",
-					direction: "descending",
+					property: "Author",
+					direction: "ascending",
 				},
 			],
 		});
@@ -99,7 +99,7 @@ export default class NotionService {
 			title: page.properties.Name.title[0].plain_text,
 			tags: page.properties.Tags.multi_select,
 			description: page.properties.Description.rich_text[0].plain_text,
-			date: page.properties.Updated.last_edited_time,
+			date: page.properties.Completion.rich_text[0].plain_text,
 			slug: page.properties.Slug.formula.string,
 		};
 	}
