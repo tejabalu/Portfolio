@@ -88,7 +88,7 @@ const BlogCard: FunctionComponent<BlogCardProps> = ({ post }) => {
 						}}
 						transition="transform 0.1s"
 						as={Link}
-						href={`/post/${post.slug}`}
+						href={`/projects/${post.slug}`}
 					>
 						<Box
 							display="flex"

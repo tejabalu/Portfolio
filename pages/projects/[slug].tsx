@@ -103,10 +103,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export async function getStaticPaths() {
 	const notionService = new NotionService();
 	// set border color based on colorModeValue (light/dark)
-	const posts = await notionService.getPublishedBlogPosts();
+	const projects = await notionService.getPublishedBlogPosts();
 
-	const paths = posts.map((post) => {
-		return `/post/${post.slug}`;
+	const paths = projects.map((post) => {
+		return `/projects/${post.slug}`;
 	});
 
 	return {

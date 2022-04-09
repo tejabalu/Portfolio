@@ -20,17 +20,17 @@ import Paragraph from "../components/Paragraph";
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	const notionService = new NotionService();
-	const posts = await notionService.getPublishedBlogPosts();
+	const projects = await notionService.getPublishedBlogPosts();
 
 	return {
 		props: {
-			posts,
+			projects,
 		},
 		revalidate: 1,
 	};
 };
 
-const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home = ({ projects }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	return (
 		<>
 			<Container maxW={"container.lg"}>
@@ -57,7 +57,7 @@ const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 				<SlideFade in={true} offsetY={80} delay={0.2}>
 					<Center>
 						<Box>
-							{posts.map((post: BlogPost) => (
+							{projects.map((post: BlogPost) => (
 								<BlogCard key={post.id} post={post} />
 							))}
 						</Box>
