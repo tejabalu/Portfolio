@@ -96,6 +96,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 			markdown: p.markdown,
 			post: p.post,
 		},
+		revalidate: 1,
 	};
 };
 
@@ -104,15 +105,13 @@ export async function getStaticPaths() {
 	// set border color based on colorModeValue (light/dark)
 	const posts = await notionService.getPublishedBlogPosts();
 
-	// Because we are generating static paths, you will have to redeploy your site whenever
-	// you make a change in Notion.
 	const paths = posts.map((post) => {
 		return `/post/${post.slug}`;
 	});
 
 	return {
 		paths,
-		fallback: false,
+		fallback: true,
 	};
 }
 
