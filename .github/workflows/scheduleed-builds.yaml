@@ -5,7 +5,7 @@ on:
     schedule:
         # Runs "at minute 58 past every hour"
         - cron: "58 * * * *"
-    jobs:
+jobs:
     build:
         name: Trigger Site Rebuild
         runs-on: ubuntu-latest
