@@ -178,6 +178,7 @@ export function ImageRenderer(props) {
 							onClick={open}
 							rounded="md"
 							cursor="pointer"
+							maxH={"80vh"}
 						/>
 					)}
 				</Item>
