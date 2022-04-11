@@ -7,6 +7,7 @@ import {
 	Link,
 	Box,
 	Divider,
+	UnorderedList,
 } from "@chakra-ui/react";
 import { BsCircleFill } from "react-icons/bs";
 import Paragraph from "../../Paragraph";
@@ -15,13 +16,6 @@ import React from "react";
 const Experience = () => {
 	return (
 		<SlideFade in={true} offsetY={80} delay={0.2}>
-			{/* <Heading
-				as="h1"
-				fontSize={{ base: "24px", md: "30px", lg: "36px" }}
-				mb={3}
-			>
-				Experience
-			</Heading> */}
 			<Heading mt={10} mb={5} as="h2" size="lg">
 				Education
 			</Heading>
@@ -49,12 +43,19 @@ const Experience = () => {
 						</Box>
 						<Paragraph fontSize="lg" pl={3}>
 							<Divider pt="2" borderColor={"transparent"} />
-							An interdisciplinary program focused on taking an
-							idea from concepts to development, and to launch.
-							<Divider pt="2" borderColor={"transparent"} />
-							Curriculum includes core concepts in technology
-							development, entrepreneurship, and design thinking,
-							ideal for Software and Technical Product Management.
+							<UnorderedList>
+								<ListItem>
+									An interdisciplinary program focused on
+									taking an idea from concepts to development,
+									and to launch.
+								</ListItem>
+								<ListItem>
+									Curriculum includes core concepts in
+									technology development, entrepreneurship,
+									and design thinking, ideal for Software and
+									Technical Product Management.
+								</ListItem>
+							</UnorderedList>
 						</Paragraph>
 					</Box>
 				</ListItem>
@@ -84,7 +85,8 @@ const Experience = () => {
 					/>
 					<Box>
 						<Box fontSize={"xl"}>
-							Project Manager - IT at&nbsp;
+							Information Systems Engineer - Digital
+							Transformation & Lean at&nbsp;
 							<Link
 								color="blue.500"
 								href="https://www.saint-gobain.co.in"
@@ -97,9 +99,11 @@ const Experience = () => {
 						</Box>
 						<Paragraph fontSize="lg" pl={3}>
 							<Divider pt="2" borderColor={"transparent"} />
-							Led Industry 4.0 and Digital projects for process
-							flow optimization across all warehouses of
-							Saint-Gobain glass plants in India.
+							Responsible for identifying and developing
+							industrial software applications (Manufacturing
+							Execution Systems) for Industry 4.0 projects focused
+							on warehosue applications across all Saint-Gobain
+							Glass plants in India.
 						</Paragraph>
 					</Box>
 				</ListItem>
@@ -125,9 +129,20 @@ const Experience = () => {
 						</Box>
 						<Paragraph fontSize="lg" pl={3}>
 							<Divider pt="2" borderColor={"transparent"} />
-							Operate various prototyping equipments and tools
-							(PCB Fabrication, CNC Milling, 3D printing, Laser
-							cutting).
+							<UnorderedList>
+								<ListItem>
+									Prototype single-sided and double-sided
+									circuit boards: generate schematics create
+									routing using Fusion 360 and Eagle,
+									fabricate using LPKF Laser U4, Protomat S4,
+									OtherMill.
+								</ListItem>
+								<ListItem>
+									Model, generate toolpaths, and 3D print
+									components using Fusion 360, Formlabs Form
+									2, Stratasys F170, Ultimaker S2.
+								</ListItem>
+							</UnorderedList>
 						</Paragraph>
 					</Box>
 				</ListItem>
