@@ -1,14 +1,6 @@
 import ToolCard from "../../ToolCard";
 import { Heading, SlideFade, Grid } from "@chakra-ui/react";
-import {
-  FaNodeJs,
-  FaReact,
-  FaJs,
-  FaJava,
-  FaGitAlt,
-  FaPython,
-} from "react-icons/fa";
-import { Icon } from "@iconify/react";
+import { FaReact, FaJs, FaJava, FaGitAlt, FaPython } from "react-icons/fa";
 
 import Paragraph from "../../Paragraph";
 import React from "react";
