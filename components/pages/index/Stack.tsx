@@ -12,7 +12,12 @@ import { Icon } from "@iconify/react";
 
 import Paragraph from "../../Paragraph";
 import React from "react";
-import { SiCsharp, SiDocker, SiTypescript, VscAzure } from "react-icons/all";
+import {
+  SiCsharp,
+  SiDocker,
+  SiMicrosoftazure,
+  SiTypescript,
+} from "react-icons/si";
 
 const tools = [
   {
@@ -46,6 +51,10 @@ const tools = [
   {
     name: "Docker",
     icon: <SiDocker />,
+  },
+  {
+    name: "Azure",
+    icon: <SiMicrosoftazure />,
   },
 ];
 
