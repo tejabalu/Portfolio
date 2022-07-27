@@ -69,8 +69,8 @@ const Stack = () => {
         Skills
       </Heading>
       <Paragraph fontSize="xl" lineHeight={1.6}>
-        As part of my masters and my time prior as a self-taught programmer,
-        these are my technologies and stacks.
+        The following are the technologies I've used over the years, and am
+        comfortable with.
       </Paragraph>
       <Grid
         mt={6}
