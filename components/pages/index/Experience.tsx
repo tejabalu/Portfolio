@@ -57,6 +57,29 @@ const Experience = () => {
           <ListIcon as={BsCircleFill} color="blue.500" fontSize={10} mt={2.5} />
           <Box>
             <Box fontSize={"xl"}>
+              Python Foundations Instructor, (April 2022 - May 2022)
+            </Box>
+            <Paragraph fontSize="lg" pl={3}>
+              <Divider pt="2" borderColor={"transparent"} />
+              <UnorderedList>
+                <ListItem>
+                  Volunteer instructor for the python foundations course by Dr.
+                  Wesley Beckner. Covered topics including Objected Oriented
+                  programming in Python, Numpy, Pandas, and Matplotlib.
+                </ListItem>
+
+                <ListItem>
+                  Led discussions, instructed over 20 students during in-class
+                  assignments, and graded exams.
+                </ListItem>
+              </UnorderedList>
+            </Paragraph>
+          </Box>
+        </ListItem>
+        <ListItem display="flex">
+          <ListIcon as={BsCircleFill} color="blue.500" fontSize={10} mt={2.5} />
+          <Box>
+            <Box fontSize={"xl"}>
               Prototyping Labs Technical Assistant,&nbsp;
               <Link
                 color="blue.500"
@@ -72,14 +95,14 @@ const Experience = () => {
               <Divider pt="2" borderColor={"transparent"} />
               <UnorderedList>
                 <ListItem>
-                  Prototype single-sided and double-sided circuit boards:
-                  generate schematics create routing using Fusion 360 and Eagle,
-                  fabricate using LPKF Laser U4, Protomat S4, OtherMill.
+                  Develop path-finding and control algorithms for in-house
+                  robotics projects using various components like Raspberry Pi,
+                  Arduino, and other BLE devices, programmed using C++.
                 </ListItem>
 
                 <ListItem>
-                  Model, generate toolpaths, and 3D print components using
-                  Fusion 360, Formlabs Form 2, Stratasys F170, Ultimaker S2.
+                  Develop and maintain the Prototyping Labs website using
+                  Jekyll, just-the-docs, hosted on GitHub and GitHub Pages.
                 </ListItem>
               </UnorderedList>
             </Paragraph>
@@ -89,8 +112,7 @@ const Experience = () => {
           <ListIcon as={BsCircleFill} color="blue.500" fontSize={10} mt={2.5} />
           <Box>
             <Box fontSize={"xl"}>
-              Information Systems Engineer - Digital Transformation & Lean
-              at&nbsp;
+              Software Developer - Digital Transformation & Lean at&nbsp;
               <Link
                 color="blue.500"
                 href="https://www.saint-gobain.co.in"
