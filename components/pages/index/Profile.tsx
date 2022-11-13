@@ -1,16 +1,15 @@
 import {
   Box,
-  Heading,
-  SlideFade,
-  Link,
-  LightMode,
   Button,
   ButtonGroup,
+  Heading,
+  LightMode,
+  Link,
+  SlideFade,
 } from "@chakra-ui/react";
 
 import { FaEnvelope, FaFileAlt, FaGithub, FaLinkedin } from "react-icons/fa";
 import Paragraph from "../../Paragraph";
-import React from "react";
 
 const Profile = () => {
   return (
@@ -55,7 +54,7 @@ const Profile = () => {
               <Button
                 colorScheme="blue"
                 bg="blue.500"
-                href="https://drive.google.com/file/d/1ZDvhRMb0jvZv1zKi8kUloTWXSYQjMEb6/view?usp=sharing"
+                href="https://docs.google.com/document/d/1UKAAynX2A7kP8DkbG_PR8139wjh6NND-RjCdJuLtzeU/edit#heading=h.1nyyawuw8ykd"
                 target={`_blank`}
                 borderRadius={5}
                 p={3}
