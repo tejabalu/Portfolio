@@ -1,21 +1,21 @@
-import React, { useState } from "react";
 import {
+  Alert,
   Box,
   Heading,
   Image,
   Link,
-  Alert,
-  VStack,
-  useColorModeValue,
-  UnorderedList,
   ListItem,
   OrderedList,
+  UnorderedList,
+  useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
-import Paragraph from "../../components/Paragraph";
-import { CustomGallery, DefaultLayout, Item } from "react-photoswipe-gallery";
-import "photoswipe/dist/photoswipe.css";
 import "photoswipe/dist/default-skin/default-skin.css";
 import PhotoswipeUIDefault from "photoswipe/dist/photoswipe-ui-default";
+import "photoswipe/dist/photoswipe.css";
+import React, { useState } from "react";
+import { CustomGallery, DefaultLayout, Item } from "react-photoswipe-gallery";
+import Paragraph from "../../components/Paragraph";
 const marginTop = "8";
 
 // export the heading renderer using the headingStyles

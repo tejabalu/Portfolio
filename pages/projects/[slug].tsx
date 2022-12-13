@@ -1,5 +1,3 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import ReactMarkdown from "react-markdown";
 import {
   Box,
   Container,
@@ -8,22 +6,25 @@ import {
   SlideFade,
   useColorModeValue,
 } from "@chakra-ui/react";
-import NotionService from "../../services/notion-service";
-import Paragraph from "../../components/Paragraph";
-import {
-  HeadingRenderer,
-  ImageRenderer,
-  ParagraphRenderer,
-  LinkRenderer,
-  BlockquoteRenderer,
-  StrongRenderer,
-  UnorderedListItemRenderer,
-  HrRenderer,
-} from "../../components/blogstyles/MarkdownRenderer";
+import { MDXProvider } from "@mdx-js/react";
+import fs from "fs";
+import matter from "gray-matter";
+import { InferGetStaticPropsType } from "next";
+import { serialize } from "next-mdx-remote/serialize";
+import path from "path";
 import tableOfContents from "../../components/blogstyles/toc";
+import Paragraph from "../../components/Paragraph";
+// @ts-ignore
+import MDX from "@mdx-js/runtime";
 
-const Post = ({ markdown }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Post = ({
+  fontMatter: { date },
+  mdxSource,
+  content,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const colorModeValue = useColorModeValue("gray.400", "gray.700");
+  console.log(mdxSource);
+  console.log(date);
   return (
     <>
       <SlideFade in={true} offsetY={80}>
@@ -46,10 +47,12 @@ const Post = ({ markdown }: InferGetStaticPropsType<typeof getStaticProps>) => {
               display={["none", "none", "block", "block"]}
               borderColor={colorModeValue}
             />
+            <MDXProvider components={{}}>
+              <MDX>{content}</MDX>
+            </MDXProvider>
             <Paragraph fontSize={"xl"}>
-              {
+              {/* {
                 <ReactMarkdown
-                  children={markdown}
                   components={{
                     h1: HeadingRenderer,
                     h2: HeadingRenderer,
@@ -65,8 +68,10 @@ const Post = ({ markdown }: InferGetStaticPropsType<typeof getStaticProps>) => {
                     hr: HrRenderer,
                     strong: StrongRenderer,
                   }}
-                />
-              }
+                >
+                  {content}
+                </ReactMarkdown>
+              } */}
             </Paragraph>
           </Box>
           <Flex alignItems={"top"} direction={"row"}></Flex>
@@ -76,37 +81,39 @@ const Post = ({ markdown }: InferGetStaticPropsType<typeof getStaticProps>) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const notionService = new NotionService();
+export const getStaticProps = async ({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) => {
+  const markdownWithMeta = fs.readFileSync(
+    path.join("posts", slug + ".mdx"),
+    "utf-8"
+  );
 
-  // @ts-ignore
-  const p = await notionService.getSingleBlogPost(context.params?.slug);
-
-  if (!p) {
-    throw "";
-  }
+  const { data: fontMatter, content } = matter(markdownWithMeta);
+  const mdxSource = await serialize(content);
 
   return {
     props: {
-      markdown: p.markdown,
-      post: p.post,
+      fontMatter,
+      slug,
+      mdxSource,
+      content,
     },
   };
 };
 
 export async function getStaticPaths() {
-  const notionService = new NotionService();
-  // set border color based on colorModeValue (light/dark)
-  const projects = await notionService.getPublishedBlogPosts();
+  const files = fs.readdirSync(path.join("posts"));
 
-  const paths = projects.map((post) => {
-    return `/projects/${post.slug}`;
-  });
+  const paths = files.map((filename) => ({
+    params: {
+      slug: filename.replace(".mdx", ""),
+    },
+  }));
 
-  return {
-    paths,
-    fallback: true,
-  };
+  return { paths, fallback: false };
 }
 
 export default Post;

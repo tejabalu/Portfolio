@@ -1,31 +1,26 @@
 import React from "react";
-import { FunctionComponent } from "react";
 // import Link from "next/link";
-import { BlogPost } from "../@types/schema";
 import dayjs from "dayjs";
 
 import {
   Box,
-  Heading,
-  Link,
-  Image,
-  Text,
-  Divider,
-  HStack,
-  Tag,
-  SpaceProps,
-  useColorModeValue,
   Container,
+  Divider,
+  Heading,
+  HStack,
+  Image,
+  Link,
   SlideFade,
+  SpaceProps,
+  Tag,
+  Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
+import { postInterface } from "../pages/projects";
 import Paragraph from "./Paragraph";
 
 const localizedFormat = require("dayjs/plugin/localizedFormat");
 dayjs.extend(localizedFormat);
-
-type BlogCardProps = {
-  post: BlogPost;
-};
 
 interface IBlogTags {
   tags: Array<string>;
@@ -59,7 +54,8 @@ export const BlogAuthor: React.FC<BlogAuthorProps> = (props) => {
   );
 };
 
-const BlogCard: FunctionComponent<BlogCardProps> = ({ post }) => {
+const BlogCard = ({ post }: { post: postInterface }) => {
+  console.log(post);
   return (
     <>
       <SlideFade in={true} offsetY={80}>
@@ -97,7 +93,7 @@ const BlogCard: FunctionComponent<BlogCardProps> = ({ post }) => {
               >
                 <Image
                   borderRadius="lg"
-                  src={post.cover}
+                  src={post.fontMatter.thumbnailURL}
                   alt="some good alt text"
                   objectFit="contain"
                 />
@@ -122,20 +118,20 @@ const BlogCard: FunctionComponent<BlogCardProps> = ({ post }) => {
               marginTop={{ base: "3", sm: "0" }}
             >
               <Heading marginTop="1" marginBottom={4}>
-                {post.title}
+                {post.slug}
               </Heading>
               <Paragraph fontSize="xl" lineHeight={1.6}>
-                {post.description}
+                {post.fontMatter.description}
               </Paragraph>
               <HStack marginTop={4} marginBottom={2}>
-                {post.tags.map((tag) => (
+                {post.fontMatter.tags.map((tag: any) => (
                   <Tag
                     size={"md"}
                     variant="solid"
                     colorScheme="blue"
                     key={tag.id}
                   >
-                    {tag.name}
+                    {tag}
                   </Tag>
                 ))}
               </HStack>
@@ -145,7 +141,7 @@ const BlogCard: FunctionComponent<BlogCardProps> = ({ post }) => {
                 display="flex"
                 alignItems="center"
               >
-                <Text fontWeight="medium">{post.date}</Text>
+                <Text fontWeight="medium">{post.fontMatter.date}</Text>
               </HStack>
             </Box>
           </Box>
