@@ -22,6 +22,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
     };
   });
 
+  posts.sort((a, b) => {
+    return b.fontMatter.order - a.fontMatter.order;
+  });
+
   return {
     props: {
       posts,
@@ -35,12 +39,12 @@ export interface postInterface {
     description: string;
     thumbnailURL: string;
     tags: Array<string>;
+    order: number;
   };
   slug: string;
 }
 
 const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(posts);
   return (
     <>
       <Container maxW={"container.lg"}>
@@ -67,9 +71,9 @@ const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <SlideFade in={true} offsetY={80} delay={0.2}>
           <Center>
             <Box>
-              {posts.map((post: postInterface, index: number) => (
-                <BlogCard key={index} post={post} />
-              ))}
+              {posts.map((post: postInterface, index: number) => {
+                return <BlogCard key={index} post={post} />;
+              })}
             </Box>
           </Center>
         </SlideFade>

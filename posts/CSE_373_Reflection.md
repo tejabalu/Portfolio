@@ -1,13 +1,14 @@
 ---
 date: March 4th, 2022
 description: Personal reflections after going through the course Data Structures and Algorithms (CSE 373) at Paul G. Allen School of Computer Science and Engineering (University of Washington).
-thumbnailURL: "/posts/OrateVR/oratevr_title.png"
+thumbnailURL: "/posts/CSE_373_Reflection/title.webp"
 tags: ["Algorithms", "CS", "Data Structures"]
+order: 6
 ---
 
 # Data Structures and Algorithms Course Reflections
 
-![this is alt](https://raw.githubusercontent.com/tejabalu/Portfolio/master/blogimages/DataStructuresMindMap.png)
+![](../public/posts/CSE_373_Reflection/DataStructuresMindMap.png)
 
 While any traditional computer programming course limits its encouragement to apply the fastest and most optimized algorithms, CSE 373 takes a step further and encourages one to think about the socio-technical impacts a program and software can have. Introducing concepts in a curated manner, they are also linked to real-life scenarios and case studies where different approaches to designing software and algorithms led to debilitated or enhanced social situations.
 
@@ -24,8 +25,6 @@ This is a nice segue into the topic of **_Affordance Analysis_**. Traditional DS
 > Affordance analysis is the study of affordances that a product offers that promotes its usage in a specific way or purpose.
 
 Personally, the biggest shift in my understanding occurred when I went through the graphs, traversals, and graph algorithms. As we were looking at a specific application of graph traversals in the field of image processing (**_seam carving_** to enable context-aware resizing of images), we were asked to look at the affordance of this specific algorithm. Drawing analogies from _DeepFakes_, I realized that a seemingly harmless algorithm such as seam carving was susceptible to similar results. The affordance of seam carving allows one to change resize images, and a particular application can even remove selected artifacts. The advent of DeepFakes and the affordance it has (that it can be used by unskilled people, which in many cases was supposed to be positive) unfortunately allowed for it to be used in negative connotations than positive. Classifying the effects of DeepFakes as ‘misinformation’ is an understatement, when it was used to create videos of people saying and doing things that they didn’t, sometimes for satires and spoofs, and more often in more malicious scenarios. A study in 2019 determined that a staggering 96% of DeepFake videos were used in pornography, and as Danielle Citron, a professor at Boston University puts it, “is being weaponized against women.”
-
-![image.png](CSE%20373%20Reflection%203e2c76adac0d4f32adf5055daa73af54/image.png)
 
 The affordance of DeepFakes is that it allows one to make realistic images and videos of people whose faces are morphed into others, and in a way that is not detectable. While researchers are trying for ways to detect DeepFakes, their research is used to patch the current DeepFake techniques to make them more undetectable. Seam carving faces the same loopholes as DeepFakes. As one gets the chance to change image sizes, without cropping them and preserving the ‘important artifacts’, or removing the artifacts altogether has the affordance of creating images that are different from the original. It lacks a mechanism to let the users know that the information was changed, and is a perfect opportunity for one to use it for malicious purposes. While this perspective of misinformation is just one single perspective on Seam carving, it also faces other issues; the use of a particular energy function to determine the least path has ramifications on the kinds of information is removed from the image while resizing. As pointed out by Kevin Lin in his paper _[Do Abstractions Have Politics? Toward a More Critical Algorithm Analysis](https://arxiv.org/pdf/2101.00786.pdf#:~:text=In%20other%20words%2C%20abstractions%20have,values%20embodied%20by%20their%20affordances.&text=To%20identify%20the%20affordances%20of,makes%20available%E2%80%9D%20%5B1%5D.),_ particular use of energy function erased parts of the body of dark-skinned women in an image and calls out on the absence of affordance analysis by the researchers.
 

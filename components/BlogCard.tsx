@@ -3,6 +3,7 @@ import React from "react";
 import dayjs from "dayjs";
 
 import {
+  AspectRatio,
   Box,
   Container,
   Divider,
@@ -55,7 +56,6 @@ export const BlogAuthor: React.FC<BlogAuthorProps> = (props) => {
 };
 
 const BlogCard = ({ post }: { post: postInterface }) => {
-  console.log(post);
   return (
     <>
       <SlideFade in={true} offsetY={80}>
@@ -91,12 +91,14 @@ const BlogCard = ({ post }: { post: postInterface }) => {
                 marginLeft={{ base: "0", sm: "5%" }}
                 marginTop="5%"
               >
-                <Image
-                  borderRadius="lg"
-                  src={post.fontMatter.thumbnailURL}
-                  alt="some good alt text"
-                  objectFit="contain"
-                />
+                <AspectRatio maxW={"100%"} ratio={4 / 3}>
+                  <Image
+                    borderRadius="lg"
+                    src={post.fontMatter.thumbnailURL}
+                    alt="some good alt text"
+                    objectFit="contain"
+                  />
+                </AspectRatio>
               </Box>
               <Box zIndex="1" width="100%" position="absolute" height="100%">
                 <Box
@@ -118,7 +120,7 @@ const BlogCard = ({ post }: { post: postInterface }) => {
               marginTop={{ base: "3", sm: "0" }}
             >
               <Heading marginTop="1" marginBottom={4}>
-                {post.slug}
+                {post.slug.replaceAll("_", " ")}
               </Heading>
               <Paragraph fontSize="xl" lineHeight={1.6}>
                 {post.fontMatter.description}

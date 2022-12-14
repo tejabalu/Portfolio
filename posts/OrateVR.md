@@ -3,9 +3,12 @@ date: March 17, 2022
 description: A Virtual Reality app that helps people better themselves in public speaking. Includes a wearable that provides feedback on one’s performance in an Oculus Quest and a web application.
 thumbnailURL: "/posts/OrateVR/oratevr_title.png"
 tags: ["Full-Stack", "Product Design", "Virtual Reality"]
+order: 7
 ---
 
-![Untitled](OrateVR/Untitled.png)
+# OrateVR
+
+![](../public/posts/OrateVR/Untitled.png)
 
 > **Problem Statement:** How can we improve the experience of practicing public speaking using immersive technology and wearables?
 
@@ -17,7 +20,7 @@ Using **immersive tech like VR** simulates the biggest component that causes sta
 
 > **Solution:** By simulating real world conditions of public speaking through virtual reality, and tracking stress conditions of the users during their speech sessions, OrateVR provides at effective platform for one to practice their public speaking along with valuable insights and feedback regarding their performance.
 
-![Device that houses the sensors, circuit board, and the battery](OrateVR%20af665404c8084a53ab9537b604d0a2f2/Untitled%201.png)
+![Device that houses the sensors, circuit board, and the battery](../public/posts/OrateVR/Untitled%201.png)
 
 Device that houses the sensors, circuit board, and the battery
 
@@ -25,14 +28,14 @@ Device that houses the sensors, circuit board, and the battery
 
 ## Intended Users:
 
-**Primary Target users:**
+Primary Target users:
 
 - People suffering from glossophobia
 - Speech disorders
 - People suffering from social anxiety disorder
 - People with fluency disorders(stuttering/stammering)
 
-**Secondary Target users:**
+Secondary Target users:
 
 - People learning a new language
 - People with less public speaking experience
@@ -44,13 +47,13 @@ Device that houses the sensors, circuit board, and the battery
 
 The hardware architecture for OrateVr includes a PPG sensor and a GSR sensor connected to an Arduino Nano 33 IoT.
 
-![Hardware diagram of sensor and circuit board configuration](OrateVR%20af665404c8084a53ab9537b604d0a2f2/Untitled%202.png)
+![Hardware diagram of sensor and circuit board configuration](../public/posts/OrateVR/Untitled%202.png)
 
 Hardware diagram of sensor and circuit board configuration
 
 ### Initial Prototype:
 
-![Initial prototype based on Raspberry Pi, Arduino Uno, and local Python scripts](OrateVR%20af665404c8084a53ab9537b604d0a2f2/Untitled%203.png)
+![Initial prototype based on Raspberry Pi, Arduino Uno, and local Python scripts](../public/posts/OrateVR/Untitled%203.png)
 
 Initial prototype based on Raspberry Pi, Arduino Uno, and local Python scripts
 
@@ -58,15 +61,15 @@ Initial prototype based on Raspberry Pi, Arduino Uno, and local Python scripts
 
 Custom circuit boards are designed in Fusion 360 and manufactured using the OtherMill.
 
-![PCB Prototyping](https://github.com/tejabalu/Portfolio/blob/master/blogimages/Othermilltimelapse.gif?raw=true)
+![PCB Prototyping](../public/posts/OrateVR/Othermilltimelapse.gif)
 
 PCB Prototyping
 
-![Completed PCB that houses Arduino Nano and connects to PPG, GSR, and the battery](OrateVR%20af665404c8084a53ab9537b604d0a2f2/Untitled%204.png)
+![Completed PCB that houses Arduino Nano and connects to PPG, GSR, and the battery](../public/posts/OrateVR/Untitled%204.png)
 
 Completed PCB that houses Arduino Nano and connects to PPG, GSR, and the battery
 
-![Final model with Nano casting data to cloud through WiFi](OrateVR%20af665404c8084a53ab9537b604d0a2f2/Untitled%205.png)
+![Final model with Nano casting data to cloud through WiFi](../public/posts/OrateVR/Untitled%205.png)
 
 Final model with Nano casting data to cloud through WiFi
 
@@ -74,7 +77,7 @@ Final model with Nano casting data to cloud through WiFi
 
 ## Software Architecture:
 
-![Software architecture showing database connecting to, Python scripts running on Azure, Front-end dashboard, and VR headsets ](OrateVR%20af665404c8084a53ab9537b604d0a2f2/Untitled%206.png)
+![Software architecture showing database connecting to, Python scripts running on Azure, Front-end dashboard, and VR headsets ](../public/posts/OrateVR/Untitled%206.png)
 
 Software architecture showing database connecting to, Python scripts running on Azure, Front-end dashboard, and VR headsets
 
@@ -90,7 +93,7 @@ The Dashboard (based on **React**, **Plotly Dash**, and **Tailwind CSS**) displa
 
 ### Data Refinement:
 
-![Raw signal (Red) and the Filtered signal after noise removal (blue)](OrateVR%20af665404c8084a53ab9537b604d0a2f2/Untitled%207.png)
+![Raw signal (Red) and the Filtered signal after noise removal (blue)](../public/posts/OrateVR/Untitled%207.png)
 
 Raw signal (Red) and the Filtered signal after noise removal (blue)
 
@@ -98,7 +101,7 @@ The raw PPG data (red) is filtered using bandpass filters that remove unnecessar
 
 The filter based on amplitude values removes the ranges above and below certain thresholds (PPG values that are not heartbeats).
 
-![The final heartbeats detected corresponding to the PPG signals](OrateVR%20af665404c8084a53ab9537b604d0a2f2/Untitled%208.png)
+![The final heartbeats detected corresponding to the PPG signals](../public/posts/OrateVR/Untitled%208.png)
 
 The final heartbeats detected corresponding to the PPG signals
 
@@ -112,7 +115,7 @@ The datasets were taken from Kaggle ([SWELL dataset | Kaggle](https://www.kaggle
 
 > To get the relevant parameters from the datasets, a Pearson’s correlation was run to find out inputs that influence the outputs. Based on these results, the corresponding parameters were derived from the PPG sensor in the previous step.
 
-![Pearson’s correlation to measure input parameter confluence with outputs](OrateVR%20af665404c8084a53ab9537b604d0a2f2/Untitled%209.png)
+![Pearson’s correlation to measure input parameter confluence with outputs](../public/posts/OrateVR/Untitled%209.png)
 
 Pearson’s correlation to measure input parameter confluence with outputs
 
@@ -120,11 +123,11 @@ After the datasets are obtained, and the relevant data from the sensors are arra
 
 Through a process of trial and error, it was concluded that a combination of 18 nodes in the 1st layer, and 10 nodes in the 2nd layer gave the maximum accuracy.
 
-![Dense neural network with hidden nodes connecting the input and output layers](OrateVR%20af665404c8084a53ab9537b604d0a2f2/Untitled%2010.png)
+![Dense neural network with hidden nodes connecting the input and output layers](../public/posts/OrateVR/Untitled%2010.png)
 
 Dense neural network with hidden nodes connecting the input and output layers
 
-![Accuracy of the machine learning model](OrateVR%20af665404c8084a53ab9537b604d0a2f2/Untitled%2011.png)
+![Accuracy of the machine learning model](../public/posts/OrateVR/Untitled%2011.png)
 
 Accuracy of the machine learning model
 
@@ -142,7 +145,7 @@ The following is the interface that the user sees in the Oculus. The location is
 
 The tablet on the screen moves with the controller of the Oculus.
 
-![Oculus App with an internal interface that shows real-time data of the user, and text to practice speech with](https://raw.githubusercontent.com/tejabalu/Portfolio/master/blogimages/OrateVROculus.gif)
+![Oculus App with an internal interface that shows real-time data of the user, and text to practice speech with.](../public/posts/OrateVR/OrateVROculus.gif)
 
 Oculus App with an internal interface that shows real-time data of the user, and text to practice speech with
 
@@ -150,7 +153,7 @@ Oculus App with an internal interface that shows real-time data of the user, and
 
 The web application shows the real-time speech session of the user on the dashboard. One can see the sensor values and the mood of the user based on these sensor values.
 
-![Dashboard showing real-time sensor values and user mood during a speech session](https://raw.githubusercontent.com/tejabalu/Portfolio/master/blogimages/DashboardOrateVR.gif)
+![Dashboard showing real-time sensor values and user mood during a speech session](../public/posts/OrateVR/DashboardOrateVR.gif)
 
 Dashboard showing real-time sensor values and user mood during a speech session
 

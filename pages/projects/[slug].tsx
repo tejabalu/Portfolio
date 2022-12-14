@@ -6,25 +6,32 @@ import {
   SlideFade,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { MDXProvider } from "@mdx-js/react";
 import fs from "fs";
 import matter from "gray-matter";
 import { InferGetStaticPropsType } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import {
+  BlockquoteRenderer,
+  HeadingRenderer,
+  HrRenderer,
+  ImageRenderer,
+  LinkRenderer,
+  StrongRenderer,
+  UnorderedListItemRenderer,
+} from "../../components/blogstyles/MarkdownRenderer";
 import tableOfContents from "../../components/blogstyles/toc";
+import { ParagraphRenderer } from "../../components/Layout/ParagraphRenderer";
 import Paragraph from "../../components/Paragraph";
-// @ts-ignore
-import MDX from "@mdx-js/runtime";
 
 const Post = ({
   fontMatter: { date },
-  mdxSource,
   content,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const colorModeValue = useColorModeValue("gray.400", "gray.700");
-  console.log(mdxSource);
-  console.log(date);
+
   return (
     <>
       <SlideFade in={true} offsetY={80}>
@@ -47,12 +54,10 @@ const Post = ({
               display={["none", "none", "block", "block"]}
               borderColor={colorModeValue}
             />
-            <MDXProvider components={{}}>
-              <MDX>{content}</MDX>
-            </MDXProvider>
             <Paragraph fontSize={"xl"}>
-              {/* {
+              {
                 <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
                   components={{
                     h1: HeadingRenderer,
                     h2: HeadingRenderer,
@@ -71,7 +76,7 @@ const Post = ({
                 >
                   {content}
                 </ReactMarkdown>
-              } */}
+              }
             </Paragraph>
           </Box>
           <Flex alignItems={"top"} direction={"row"}></Flex>
@@ -87,7 +92,7 @@ export const getStaticProps = async ({
   params: { slug: string };
 }) => {
   const markdownWithMeta = fs.readFileSync(
-    path.join("posts", slug + ".mdx"),
+    path.join("posts", slug + ".md"),
     "utf-8"
   );
 
@@ -98,7 +103,6 @@ export const getStaticProps = async ({
     props: {
       fontMatter,
       slug,
-      mdxSource,
       content,
     },
   };
@@ -109,7 +113,7 @@ export async function getStaticPaths() {
 
   const paths = files.map((filename) => ({
     params: {
-      slug: filename.replace(".mdx", ""),
+      slug: filename.replace(".md", ""),
     },
   }));
 
