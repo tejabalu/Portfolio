@@ -1,3 +1,4 @@
+import NextImage from "next/image";
 import React from "react";
 // import Link from "next/link";
 import dayjs from "dayjs";
@@ -91,12 +92,14 @@ const BlogCard = ({ post }: { post: postInterface }) => {
                 marginLeft={{ base: "0", sm: "5%" }}
                 marginTop="5%"
               >
-                <AspectRatio maxW={"100%"} ratio={4 / 3}>
+                <AspectRatio maxW={"100%"} ratio={4 / 3} position={"relative"}>
                   <Image
                     borderRadius="lg"
                     src={post.fontMatter.thumbnailURL}
                     alt="some good alt text"
-                    objectFit="contain"
+                    objectFit={"cover"}
+                    layout={"fill"}
+                    as={NextImage}
                   />
                 </AspectRatio>
               </Box>
