@@ -1,17 +1,16 @@
 import {
   Box,
-  Stack,
-  Text,
-  Container,
   ButtonGroup,
+  Container,
+  Divider,
   IconButton,
   Link,
-  Divider,
+  Stack,
+  Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import React from "react";
 
-import { FaLinkedin, FaGithub, FaBehance } from "react-icons/fa";
+import { FaBehance, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => (
   <Box
@@ -27,7 +26,7 @@ const Footer = () => (
       <Stack direction="row" align="center" justify="space-between" pt={5}>
         <Text fontSize="md">
           &copy; Teja Balu, {new Date().getFullYear()} | Built using Next.js,
-          Chakra UI, and Notion.
+          Chakra UI, and Markdown.
         </Text>
         <ButtonGroup variant="ghost">
           <IconButton

@@ -1,7 +1,6 @@
 import NextImage from "next/image";
 import React from "react";
 // import Link from "next/link";
-import dayjs from "dayjs";
 import {
   AspectRatio,
   Box,
@@ -17,6 +16,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import dayjs from "dayjs";
 import { postInterface } from "../pages/projects";
 import Paragraph from "./Paragraph";
 
@@ -99,6 +99,7 @@ const BlogCard = ({ post }: { post: postInterface }) => {
                     objectFit={"cover"}
                     layout={"fill"}
                     as={NextImage}
+                    priority={true}
                   />
                 </AspectRatio>
               </Box>
