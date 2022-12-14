@@ -1,23 +1,22 @@
-import React from "react";
-import { FunctionComponent } from "react";
-// import Link from "next/link";
-import { BlogPost } from "../@types/schema";
-import dayjs from "dayjs";
-
 import {
+  AspectRatio,
   Box,
-  Heading,
-  Link,
-  Image,
-  Text,
-  Divider,
-  HStack,
-  Tag,
-  SpaceProps,
-  useColorModeValue,
   Container,
+  Divider,
+  Heading,
+  HStack,
+  Image,
+  Link,
   SlideFade,
+  SpaceProps,
+  Tag,
+  Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
+import dayjs from "dayjs";
+import NextImage from "next/image";
+import React, { FunctionComponent, useState } from "react";
+import { BlogPost } from "../@types/schema";
 import Paragraph from "./Paragraph";
 
 const localizedFormat = require("dayjs/plugin/localizedFormat");
@@ -60,6 +59,9 @@ export const BlogAuthor: React.FC<BlogAuthorProps> = (props) => {
 };
 
 const BlogCard: FunctionComponent<BlogCardProps> = ({ post }) => {
+  const [width, setWidth] = useState(null);
+  const [height, setHeight] = useState(null);
+
   return (
     <>
       <SlideFade in={true} offsetY={80}>
@@ -95,12 +97,26 @@ const BlogCard: FunctionComponent<BlogCardProps> = ({ post }) => {
                 marginLeft={{ base: "0", sm: "5%" }}
                 marginTop="5%"
               >
-                <Image
-                  borderRadius="lg"
-                  src={post.cover}
-                  alt="some good alt text"
-                  objectFit="contain"
-                />
+                <AspectRatio
+                  w={"100%"}
+                  maxW={"100%"}
+                  ratio={width / height}
+                  position={"relative"}
+                >
+                  <Image
+                    borderRadius="lg"
+                    src={post.cover}
+                    alt="some good alt text"
+                    as={NextImage}
+                    cursor="pointer"
+                    layout={"fill"}
+                    objectFit={"contain"}
+                    onLoadingComplete={(target) => {
+                      setWidth(target.naturalWidth);
+                      setHeight(target.naturalHeight);
+                    }}
+                  />
+                </AspectRatio>
               </Box>
               <Box zIndex="1" width="100%" position="absolute" height="100%">
                 <Box

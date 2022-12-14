@@ -1,21 +1,23 @@
-import React, { useState } from "react";
 import {
+  Alert,
+  AspectRatio,
   Box,
   Heading,
   Image,
   Link,
-  Alert,
-  VStack,
-  useColorModeValue,
-  UnorderedList,
   ListItem,
   OrderedList,
+  UnorderedList,
+  useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
-import Paragraph from "../../components/Paragraph";
-import { CustomGallery, DefaultLayout, Item } from "react-photoswipe-gallery";
-import "photoswipe/dist/photoswipe.css";
+import NextImage from "next/image";
 import "photoswipe/dist/default-skin/default-skin.css";
 import PhotoswipeUIDefault from "photoswipe/dist/photoswipe-ui-default";
+import "photoswipe/dist/photoswipe.css";
+import React, { useState } from "react";
+import { CustomGallery, DefaultLayout, Item } from "react-photoswipe-gallery";
+import Paragraph from "../../components/Paragraph";
 const marginTop = "8";
 
 // export the heading renderer using the headingStyles
@@ -123,21 +125,7 @@ export function ImageRenderer(props) {
   const [height, setHeight] = useState(null);
 
   return (
-    <VStack
-      width="80%"
-      marginLeft={"auto"}
-      marginRight={"auto"}
-      setWidth={setWidth}
-      setHeight={setHeight}
-      onLoad={() => {
-        console.log("test3");
-        const image = new (window as any).Image(undefined);
-        image.src = props.src;
-        setWidth(image.width);
-        setHeight(image.height);
-        console.log(width, height);
-      }}
-    >
+    <VStack width="80%" marginLeft={"auto"} marginRight={"auto"}>
       <CustomGallery layoutRef={LayoutRef} ui={PhotoswipeUIDefault}>
         <Item
           original={props.src}
@@ -146,14 +134,27 @@ export function ImageRenderer(props) {
           height={height}
         >
           {({ open }) => (
-            <Image
-              ref={props.ref}
-              src={props.src}
-              onClick={open}
-              rounded="md"
-              cursor="pointer"
-              maxH={"80vh"}
-            />
+            <AspectRatio
+              w={"100%"}
+              maxW={"100%"}
+              ratio={width / height}
+              position={"relative"}
+            >
+              <Image
+                ref={props.ref}
+                src={props.src}
+                onClick={open}
+                rounded="md"
+                as={NextImage}
+                cursor="pointer"
+                layout={"fill"}
+                objectFit={"contain"}
+                onLoadingComplete={(target) => {
+                  setWidth(target.naturalWidth);
+                  setHeight(target.naturalHeight);
+                }}
+              />
+            </AspectRatio>
           )}
         </Item>
       </CustomGallery>
