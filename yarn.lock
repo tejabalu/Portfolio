@@ -4280,11 +4280,6 @@ react-markdown@^8.0.0:
     unist-util-visit "^4.0.0"
     vfile "^5.0.0"
 
-react-photoswipe-gallery@^1.3.8:
-  version "1.3.8"
-  resolved "https://registry.npmjs.org/react-photoswipe-gallery/-/react-photoswipe-gallery-1.3.8.tgz"
-  integrity sha512-cDHCvqotfAjk728Kp2A61oyBX5ARbkZoVoS1J68ie3F4ATU7W0D9cO1FkCyn6fzyGwCA9/k/iU33fepZHuktow==
-
 react-refresh@0.8.3:
   version "0.8.3"
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.8.3.tgz"

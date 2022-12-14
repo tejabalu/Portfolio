@@ -9,6 +9,7 @@ module.exports = {
       "https://github.com/tejabalu/Portfolio/blob/master/blogimages",
       "github.com",
     ],
+    minimumCacheTTL: 31536000,
   },
 
   module: {
