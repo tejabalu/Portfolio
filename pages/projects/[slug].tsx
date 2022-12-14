@@ -1,5 +1,3 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import ReactMarkdown from "react-markdown";
 import {
   Box,
   Container,
@@ -8,22 +6,32 @@ import {
   SlideFade,
   useColorModeValue,
 } from "@chakra-ui/react";
-import NotionService from "../../services/notion-service";
-import Paragraph from "../../components/Paragraph";
+import fs from "fs";
+import matter from "gray-matter";
+import { InferGetStaticPropsType } from "next";
+import { serialize } from "next-mdx-remote/serialize";
+import path from "path";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import {
-  HeadingRenderer,
-  ImageRenderer,
-  ParagraphRenderer,
-  LinkRenderer,
   BlockquoteRenderer,
+  HeadingRenderer,
+  HrRenderer,
+  ImageRenderer,
+  LinkRenderer,
   StrongRenderer,
   UnorderedListItemRenderer,
-  HrRenderer,
 } from "../../components/blogstyles/MarkdownRenderer";
 import tableOfContents from "../../components/blogstyles/toc";
+import { ParagraphRenderer } from "../../components/Layout/ParagraphRenderer";
+import Paragraph from "../../components/Paragraph";
 
-const Post = ({ markdown }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Post = ({
+  fontMatter: { date },
+  content,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const colorModeValue = useColorModeValue("gray.400", "gray.700");
+
   return (
     <>
       <SlideFade in={true} offsetY={80}>
@@ -49,7 +57,7 @@ const Post = ({ markdown }: InferGetStaticPropsType<typeof getStaticProps>) => {
             <Paragraph fontSize={"xl"}>
               {
                 <ReactMarkdown
-                  children={markdown}
+                  remarkPlugins={[remarkGfm]}
                   components={{
                     h1: HeadingRenderer,
                     h2: HeadingRenderer,
@@ -65,7 +73,9 @@ const Post = ({ markdown }: InferGetStaticPropsType<typeof getStaticProps>) => {
                     hr: HrRenderer,
                     strong: StrongRenderer,
                   }}
-                />
+                >
+                  {content}
+                </ReactMarkdown>
               }
             </Paragraph>
           </Box>
@@ -76,37 +86,38 @@ const Post = ({ markdown }: InferGetStaticPropsType<typeof getStaticProps>) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const notionService = new NotionService();
+export const getStaticProps = async ({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) => {
+  const markdownWithMeta = fs.readFileSync(
+    path.join("posts", slug + ".md"),
+    "utf-8"
+  );
 
-  // @ts-ignore
-  const p = await notionService.getSingleBlogPost(context.params?.slug);
-
-  if (!p) {
-    throw "";
-  }
+  const { data: fontMatter, content } = matter(markdownWithMeta);
+  const mdxSource = await serialize(content);
 
   return {
     props: {
-      markdown: p.markdown,
-      post: p.post,
+      fontMatter,
+      slug,
+      content,
     },
   };
 };
 
 export async function getStaticPaths() {
-  const notionService = new NotionService();
-  // set border color based on colorModeValue (light/dark)
-  const projects = await notionService.getPublishedBlogPosts();
+  const files = fs.readdirSync(path.join("posts"));
 
-  const paths = projects.map((post) => {
-    return `/projects/${post.slug}`;
-  });
+  const paths = files.map((filename) => ({
+    params: {
+      slug: filename.replace(".md", ""),
+    },
+  }));
 
-  return {
-    paths,
-    fallback: true,
-  };
+  return { paths, fallback: false };
 }
 
 export default Post;

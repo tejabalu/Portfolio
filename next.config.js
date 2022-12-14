@@ -4,9 +4,10 @@ module.exports = {
       "dl.airtable.com",
       "images.unsplash.com",
       "s3.us-west-2.amazonaws.com",
+      "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/",
       "raw.githubusercontent.com",
+      "https://github.com/tejabalu/Portfolio/blob/master/blogimages",
       "github.com",
-      "uploads-ssl.webflow.com",
     ],
   },
 
@@ -21,4 +22,12 @@ module.exports = {
       { test: /\.js$/, loader: "source-map-loader" },
     ],
   },
+  // webpack: (config, { isServer }) => {
+  //   // console.log({ config });
+  //   // Fixes npm packages that depend on `fs` module
+  //   if (!isServer) {
+  //     config.node = { fs: "empty" };
+  //   }
+  //   return config;
+  // },
 };

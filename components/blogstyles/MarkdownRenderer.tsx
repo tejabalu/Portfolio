@@ -12,15 +12,12 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import NextImage from "next/image";
-import "photoswipe/dist/default-skin/default-skin.css";
-import PhotoswipeUIDefault from "photoswipe/dist/photoswipe-ui-default";
-import "photoswipe/dist/photoswipe.css";
 import React, { useState } from "react";
-import { CustomGallery, DefaultLayout, Item } from "react-photoswipe-gallery";
 import Paragraph from "../../components/Paragraph";
 const marginTop = "8";
 
 // export the heading renderer using the headingStyles
+// @ts-ignore
 export function HeadingRenderer(props) {
   switch (props.level) {
     case 1:
@@ -119,50 +116,36 @@ export function HeadingRenderer(props) {
 }
 
 // export the image renderer
+// @ts-ignore
 export function ImageRenderer(props) {
   const LayoutRef = React.useRef();
-  const [width, setWidth] = useState(null);
-  const [height, setHeight] = useState(null);
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
 
   return (
-    <VStack width="80%" marginLeft={"auto"} marginRight={"auto"}>
-      <CustomGallery layoutRef={LayoutRef} ui={PhotoswipeUIDefault}>
-        <Item
-          original={props.src}
-          thumbnail={props.src}
-          width={width}
-          height={height}
-        >
-          {({ open }) => (
-            <AspectRatio
-              w={"100%"}
-              maxW={"100%"}
-              ratio={width / height}
-              position={"relative"}
-            >
-              <Image
-                ref={props.ref}
-                src={props.src}
-                onClick={open}
-                rounded="md"
-                as={NextImage}
-                cursor="pointer"
-                layout={"fill"}
-                objectFit={"contain"}
-                onLoadingComplete={(target) => {
-                  setWidth(target.naturalWidth);
-                  setHeight(target.naturalHeight);
-                }}
-              />
-            </AspectRatio>
-          )}
-        </Item>
-      </CustomGallery>
-      <DefaultLayout
-        shareButton={false}
-        fullscreenButton={false}
-        ref={LayoutRef}
-      />
+    <VStack>
+      <AspectRatio
+        maxH={"80vh"}
+        ratio={width / height}
+        position={"relative"}
+        width="80%"
+        marginLeft={"auto"}
+        marginRight={"auto"}
+      >
+        <Image
+          ref={props.ref}
+          rounded="md"
+          src={props.src.replace("../public", "")}
+          as={NextImage}
+          layout={"fill"}
+          objectFit={"contain"}
+          priority={true}
+          onLoadingComplete={(target: any) => {
+            setWidth(target.naturalWidth);
+            setHeight(target.naturalHeight);
+          }}
+        />
+      </AspectRatio>
       <Paragraph fontSize="sm" fontStyle={"italic"}>
         {props.alt}
       </Paragraph>
@@ -171,6 +154,7 @@ export function ImageRenderer(props) {
 }
 
 // export the paragraph renderer
+// @ts-ignore
 export function ParagraphRenderer(props) {
   return (
     <Paragraph fontSize={"xl"} marginTop={marginTop}>
@@ -180,6 +164,7 @@ export function ParagraphRenderer(props) {
 }
 
 // export the strong text renderer
+// @ts-ignore
 export function StrongRenderer(props) {
   return (
     <span
@@ -194,6 +179,7 @@ export function StrongRenderer(props) {
 }
 
 // export the link renderer
+// @ts-ignore
 export function LinkRenderer(props) {
   return (
     <Link
@@ -209,6 +195,7 @@ export function LinkRenderer(props) {
 }
 
 // export the blockquote renderer
+// @ts-ignore
 export function BlockquoteRenderer(props) {
   return (
     <Alert
@@ -224,26 +211,27 @@ export function BlockquoteRenderer(props) {
 }
 
 // export the ordered list item renderer
+// @ts-ignore
 export function OrderedListItemRenderer(props) {
   return (
-    <OrderedList marginTop={-6}>
+    <OrderedList>
       <ListItem>{props.children}</ListItem>
     </OrderedList>
   );
 }
 
 // export the unordered list item renderer
+// @ts-ignore
 export function UnorderedListItemRenderer(props) {
   return (
-    <UnorderedList marginTop={-7}>
-      <ListItem color={useColorModeValue("gray.400", "gray.400")}>
-        {props.children}
-      </ListItem>
+    <UnorderedList>
+      <ListItem>{props.children}</ListItem>
     </UnorderedList>
   );
 }
 
 // Hr renderer
+// @ts-ignore
 export function HrRenderer() {
   return (
     <Box

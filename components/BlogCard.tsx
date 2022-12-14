@@ -1,3 +1,6 @@
+import React from "react";
+// import Link from "next/link";
+import dayjs from "dayjs";
 import {
   AspectRatio,
   Box,
@@ -13,18 +16,11 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import dayjs from "dayjs";
-import NextImage from "next/image";
-import React, { FunctionComponent, useState } from "react";
-import { BlogPost } from "../@types/schema";
+import { postInterface } from "../pages/projects";
 import Paragraph from "./Paragraph";
 
 const localizedFormat = require("dayjs/plugin/localizedFormat");
 dayjs.extend(localizedFormat);
-
-type BlogCardProps = {
-  post: BlogPost;
-};
 
 interface IBlogTags {
   tags: Array<string>;
@@ -58,10 +54,7 @@ export const BlogAuthor: React.FC<BlogAuthorProps> = (props) => {
   );
 };
 
-const BlogCard: FunctionComponent<BlogCardProps> = ({ post }) => {
-  const [width, setWidth] = useState(null);
-  const [height, setHeight] = useState(null);
-
+const BlogCard = ({ post }: { post: postInterface }) => {
   return (
     <>
       <SlideFade in={true} offsetY={80}>
@@ -97,24 +90,12 @@ const BlogCard: FunctionComponent<BlogCardProps> = ({ post }) => {
                 marginLeft={{ base: "0", sm: "5%" }}
                 marginTop="5%"
               >
-                <AspectRatio
-                  w={"100%"}
-                  maxW={"100%"}
-                  ratio={width / height}
-                  position={"relative"}
-                >
+                <AspectRatio maxW={"100%"} ratio={4 / 3}>
                   <Image
                     borderRadius="lg"
-                    src={post.cover}
+                    src={post.fontMatter.thumbnailURL}
                     alt="some good alt text"
-                    as={NextImage}
-                    cursor="pointer"
-                    layout={"fill"}
-                    objectFit={"contain"}
-                    onLoadingComplete={(target) => {
-                      setWidth(target.naturalWidth);
-                      setHeight(target.naturalHeight);
-                    }}
+                    objectFit="contain"
                   />
                 </AspectRatio>
               </Box>
@@ -138,20 +119,20 @@ const BlogCard: FunctionComponent<BlogCardProps> = ({ post }) => {
               marginTop={{ base: "3", sm: "0" }}
             >
               <Heading marginTop="1" marginBottom={4}>
-                {post.title}
+                {post.slug.replace(/_/g, " ")}
               </Heading>
               <Paragraph fontSize="xl" lineHeight={1.6}>
-                {post.description}
+                {post.fontMatter.description}
               </Paragraph>
               <HStack marginTop={4} marginBottom={2}>
-                {post.tags.map((tag) => (
+                {post.fontMatter.tags.map((tag: any) => (
                   <Tag
                     size={"md"}
                     variant="solid"
                     colorScheme="blue"
                     key={tag.id}
                   >
-                    {tag.name}
+                    {tag}
                   </Tag>
                 ))}
               </HStack>
@@ -161,7 +142,7 @@ const BlogCard: FunctionComponent<BlogCardProps> = ({ post }) => {
                 display="flex"
                 alignItems="center"
               >
-                <Text fontWeight="medium">{post.date}</Text>
+                <Text fontWeight="medium">{post.fontMatter.date}</Text>
               </HStack>
             </Box>
           </Box>

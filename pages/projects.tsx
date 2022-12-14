@@ -1,24 +1,50 @@
-import { Box, Center, Container, SlideFade, Heading } from "@chakra-ui/react";
-import React from "react";
-
+import { Box, Center, Container, Heading, SlideFade } from "@chakra-ui/react";
+import fs from "fs";
+import matter from "gray-matter";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { BlogPost } from "../@types/schema";
+import path from "path";
 import BlogCard from "../components/BlogCard";
-import NotionService from "../services/notion-service";
 import Paragraph from "../components/Paragraph";
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const notionService = new NotionService();
-  const projects = await notionService.getPublishedBlogPosts();
+  const files = fs.readdirSync(path.join("posts"));
+
+  const posts = files.map((filename) => {
+    const markdownWithMeta = fs.readFileSync(
+      path.join("posts", filename),
+      "utf-8"
+    );
+    const { data: fontMatter } = matter(markdownWithMeta);
+
+    return {
+      fontMatter,
+      slug: filename.split(".")[0],
+    };
+  });
+
+  posts.sort((a, b) => {
+    return b.fontMatter.order - a.fontMatter.order;
+  });
 
   return {
     props: {
-      projects,
+      posts,
     },
   };
 };
 
-const Home = ({ projects }: InferGetStaticPropsType<typeof getStaticProps>) => {
+export interface postInterface {
+  fontMatter: {
+    date: string;
+    description: string;
+    thumbnailURL: string;
+    tags: Array<string>;
+    order: number;
+  };
+  slug: string;
+}
+
+const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Container maxW={"container.lg"}>
@@ -45,9 +71,9 @@ const Home = ({ projects }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <SlideFade in={true} offsetY={80} delay={0.2}>
           <Center>
             <Box>
-              {projects.map((post: BlogPost) => (
-                <BlogCard key={post.id} post={post} />
-              ))}
+              {posts.map((post: postInterface, index: number) => {
+                return <BlogCard key={index} post={post} />;
+              })}
             </Box>
           </Center>
         </SlideFade>
