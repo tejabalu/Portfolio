@@ -120,7 +120,7 @@ const BlogCard = ({ post }: { post: postInterface }) => {
               marginTop={{ base: "3", sm: "0" }}
             >
               <Heading marginTop="1" marginBottom={4}>
-                {post.slug.replaceAll("_", " ")}
+                {post.slug.replace(/_/g, " ")}
               </Heading>
               <Paragraph fontSize="xl" lineHeight={1.6}>
                 {post.fontMatter.description}
