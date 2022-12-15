@@ -7,6 +7,7 @@ import {
   Link,
   ListItem,
   OrderedList,
+  Spinner,
   UnorderedList,
   useColorModeValue,
   VStack,
@@ -121,9 +122,11 @@ export function ImageRenderer(props) {
   const LayoutRef = React.useRef();
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
+  const [loaded, setLoaded] = useState(false);
 
   return (
     <VStack>
+      {!loaded && <Spinner />}
       <AspectRatio
         maxH={"80vh"}
         ratio={width / height}
@@ -139,10 +142,10 @@ export function ImageRenderer(props) {
           as={NextImage}
           layout={"fill"}
           objectFit={"contain"}
-          priority={true}
           onLoadingComplete={(target: any) => {
             setWidth(target.naturalWidth);
             setHeight(target.naturalHeight);
+            setLoaded(true);
           }}
         />
       </AspectRatio>

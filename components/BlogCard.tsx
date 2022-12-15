@@ -1,5 +1,5 @@
 import NextImage from "next/image";
-import React from "react";
+import React, { useState } from "react";
 // import Link from "next/link";
 import {
   AspectRatio,
@@ -11,6 +11,7 @@ import {
   Image,
   SlideFade,
   SpaceProps,
+  Spinner,
   Tag,
   Text,
   useColorModeValue,
@@ -56,6 +57,8 @@ export const BlogAuthor: React.FC<BlogAuthorProps> = (props) => {
 };
 
 const BlogCard = ({ post }: { post: postInterface }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <>
       <SlideFade in={true} offsetY={80}>
@@ -91,6 +94,7 @@ const BlogCard = ({ post }: { post: postInterface }) => {
                     marginLeft={{ base: "0", sm: "5%" }}
                     marginTop="5%"
                   >
+                    {!imageLoaded && <Spinner />}
                     <AspectRatio
                       maxW={"100%"}
                       ratio={4 / 3}
@@ -99,11 +103,14 @@ const BlogCard = ({ post }: { post: postInterface }) => {
                       <Image
                         borderRadius="lg"
                         src={post.fontMatter.thumbnailURL}
-                        alt="some good alt text"
+                        alt=""
                         objectFit={"cover"}
                         layout={"fill"}
                         as={NextImage}
                         priority={true}
+                        onLoadingComplete={() => {
+                          setImageLoaded(true);
+                        }}
                       />
                     </AspectRatio>
                   </Box>
