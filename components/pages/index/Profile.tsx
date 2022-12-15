@@ -35,8 +35,6 @@ const Profile = () => {
           </Link>{" "}
           at the University of Washington.
           <br />
-          I'm looking for Software / Full-Stack Development roles starting in
-          the fall of 2022.
         </Paragraph>
         <Box mt={10}>
           <LightMode>

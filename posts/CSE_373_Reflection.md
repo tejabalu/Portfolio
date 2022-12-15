@@ -1,4 +1,5 @@
 ---
+title: CSE 373 Reflection
 date: March 4th, 2022
 description: Personal reflections after going through the course Data Structures and Algorithms (CSE 373) at Paul G. Allen School of Computer Science and Engineering (University of Washington).
 thumbnailURL: "/posts/CSE_373_Reflection/title.webp"

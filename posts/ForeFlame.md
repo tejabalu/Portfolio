@@ -1,4 +1,5 @@
 ---
+title: "ForeFlame: Wildfire Prediction Dashboard"
 date: March 17, 2022
 description: ForeFlame is a dashboard designed for Fire Analysts to view the probabilities of wildfire occurrences to make informed tactical decisions on wildfire management and mitigation.
 thumbnailURL: "/posts/ForeFlame/title.png"

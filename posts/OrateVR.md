@@ -1,4 +1,5 @@
 ---
+title: OrateVR
 date: March 17, 2022
 description: A Virtual Reality app that helps people better themselves in public speaking. Includes a wearable that provides feedback on one’s performance in an Oculus Quest and a web application.
 thumbnailURL: "/posts/OrateVR/oratevr_title.png"

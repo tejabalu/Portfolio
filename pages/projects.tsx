@@ -35,6 +35,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 export interface postInterface {
   fontMatter: {
+    title: string;
     date: string;
     description: string;
     thumbnailURL: string;

@@ -1,15 +1,14 @@
+import { Grid, Heading, SlideFade } from "@chakra-ui/react";
+import { FaGitAlt, FaJs, FaPython, FaReact } from "react-icons/fa";
 import ToolCard from "../../ToolCard";
-import { Heading, SlideFade, Grid } from "@chakra-ui/react";
-import { FaReact, FaJs, FaJava, FaGitAlt, FaPython } from "react-icons/fa";
 
-import Paragraph from "../../Paragraph";
-import React from "react";
 import {
   SiCsharp,
   SiDocker,
   SiMicrosoftazure,
   SiTypescript,
 } from "react-icons/si";
+import Paragraph from "../../Paragraph";
 
 const tools = [
   {
@@ -27,10 +26,6 @@ const tools = [
   {
     name: "TypeScript",
     icon: <SiTypescript />,
-  },
-  {
-    name: "Java",
-    icon: <FaJava fontSize="20px" />,
   },
   {
     name: "C#",

@@ -1,4 +1,5 @@
 ---
+title: Rock-Paper-Scissors
 date: August 20, 2021
 description: A simulation of the game of Rock-Paper-Scissors developed using vanilla HTML, CSS and JS.
 tags: ["CSS", "HTML", "Javascript"]

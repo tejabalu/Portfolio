@@ -1,4 +1,5 @@
 ---
+title: Pixel-Paint
 date: August 20, 2021
 description: A digital painting web app written using vanilla javascript, html, css. Users have options to set the artboard size, paint, smudge, erase, lighten and darken pixels.
 thumbnailURL: "/posts/Pixel-Paint/title.webp"
