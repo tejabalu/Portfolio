@@ -13,6 +13,7 @@ order: 8
 
 > ForeFlame is a dashboard designed for Fire Analysts to view the probabilities of wildfire occurrences, along with other relevant parameters like vegetation, terrain, temperature, wind speed, and soil moisture, to make informed tactical decisions on wildfire management and mitigation.
 
+> Live site: [foreflame.com](https://www.foreflame.com/)
 ---
 
 ## About the Team
