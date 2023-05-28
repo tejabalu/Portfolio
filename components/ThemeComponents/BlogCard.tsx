@@ -1,5 +1,3 @@
-import NextImage from "next/image";
-import React, { useState } from "react";
 // import Link from "next/link";
 import {
   AspectRatio,
@@ -10,51 +8,20 @@ import {
   HStack,
   Image,
   SlideFade,
-  SpaceProps,
   Spinner,
   Tag,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 import dayjs from "dayjs";
+import NextImage from "next/image";
 import Link from "next/link";
-import { postInterface } from "../pages/projects";
+import React, { useState } from "react";
+import { postInterface } from "../../pages/projects";
 import Paragraph from "./Paragraph";
 
 const localizedFormat = require("dayjs/plugin/localizedFormat");
 dayjs.extend(localizedFormat);
-
-interface IBlogTags {
-  tags: Array<string>;
-  marginTop?: SpaceProps["marginTop"];
-}
-
-const BlogTags: React.FC<IBlogTags> = (props) => {
-  return (
-    <HStack spacing={2} marginTop={props.marginTop}>
-      {props.tags.map((tag) => {
-        return (
-          <Tag size={"md"} variant="solid" colorScheme="blue" key={tag}>
-            {tag}
-          </Tag>
-        );
-      })}
-    </HStack>
-  );
-};
-
-interface BlogAuthorProps {
-  date: string;
-  name: string;
-}
-
-export const BlogAuthor: React.FC<BlogAuthorProps> = (props) => {
-  return (
-    <HStack marginTop="2" spacing="2" display="flex" alignItems="center">
-      <Text fontWeight="medium">{props.date}</Text>
-    </HStack>
-  );
-};
 
 const BlogCard = ({ post }: { post: postInterface }) => {
   const [imageLoaded, setImageLoaded] = useState(false);

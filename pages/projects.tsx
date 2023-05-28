@@ -3,8 +3,8 @@ import fs from "fs";
 import matter from "gray-matter";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import path from "path";
-import BlogCard from "../components/BlogCard";
-import Paragraph from "../components/Paragraph";
+import BlogCard from "../components/ThemeComponents/BlogCard";
+import Paragraph from "../components/ThemeComponents/Paragraph";
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const files = fs.readdirSync(path.join("posts"));

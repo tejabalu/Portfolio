@@ -1,16 +1,16 @@
-import Head from "next/head";
 import {
   Box,
-  Container,
-  Heading,
-  SlideFade,
-  Divider,
-  Link,
   Center,
+  Container,
+  Divider,
+  Heading,
+  Link,
+  SlideFade,
   useColorModeValue,
 } from "@chakra-ui/react";
-import Paragraph from "../components/Paragraph";
+import Head from "next/head";
 import React from "react";
+import Paragraph from "../components/ThemeComponents/Paragraph";
 
 const About = () => {
   return (

@@ -1,19 +1,19 @@
+import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import {
   Box,
+  Button,
+  Container,
   Flex,
   HStack,
   IconButton,
-  useColorMode,
-  Button,
-  useDisclosure,
   Stack,
-  Container,
+  useColorMode,
+  useDisclosure,
 } from "@chakra-ui/react";
-import Link from "./extra/Link";
-import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
-import Logo from "../Logo";
 import { useRouter } from "next/router";
 import React from "react";
+import Logo from "../ThemeComponents/Logo";
+import Link from "./extra/Link";
 
 const Links = [
   {

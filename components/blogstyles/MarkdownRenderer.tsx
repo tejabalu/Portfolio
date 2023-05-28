@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import NextImage from "next/image";
 import React, { useState } from "react";
-import Paragraph from "../../components/Paragraph";
+import Paragraph from "../ThemeComponents/Paragraph";
 const marginTop = "8";
 
 // export the heading renderer using the headingStyles

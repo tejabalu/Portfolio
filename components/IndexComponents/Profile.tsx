@@ -8,9 +8,8 @@ import {
   SlideFade,
   Wrap,
 } from "@chakra-ui/react";
-
 import { FaEnvelope, FaFileAlt, FaGithub, FaLinkedin } from "react-icons/fa";
-import Paragraph from "../../Paragraph";
+import Paragraph from "../ThemeComponents/Paragraph";
 
 const Profile = () => {
   return (

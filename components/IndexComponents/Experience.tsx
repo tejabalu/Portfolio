@@ -1,17 +1,17 @@
 import {
-  Heading,
-  SlideFade,
-  List,
-  ListItem,
-  ListIcon,
-  Link,
   Box,
   Divider,
+  Heading,
+  Link,
+  List,
+  ListIcon,
+  ListItem,
+  SlideFade,
   UnorderedList,
 } from "@chakra-ui/react";
-import { BsCircleFill } from "react-icons/bs";
-import Paragraph from "../../Paragraph";
 import React from "react";
+import { BsCircleFill } from "react-icons/bs";
+import Paragraph from "../ThemeComponents/Paragraph";
 
 const Experience = () => {
   return (

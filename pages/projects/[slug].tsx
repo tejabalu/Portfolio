@@ -24,7 +24,7 @@ import {
 } from "../../components/blogstyles/MarkdownRenderer";
 import tableOfContents from "../../components/blogstyles/toc";
 import { ParagraphRenderer } from "../../components/Layout/ParagraphRenderer";
-import Paragraph from "../../components/Paragraph";
+import Paragraph from "../../components/ThemeComponents/Paragraph";
 
 const Post = ({
   fontMatter: { date },

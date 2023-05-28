@@ -1,14 +1,13 @@
 import { Grid, Heading, SlideFade } from "@chakra-ui/react";
 import { FaGitAlt, FaJs, FaPython, FaReact } from "react-icons/fa";
-import ToolCard from "../../ToolCard";
-
 import {
   SiCsharp,
   SiDocker,
   SiMicrosoftazure,
   SiTypescript,
 } from "react-icons/si";
-import Paragraph from "../../Paragraph";
+import Paragraph from "../ThemeComponents/Paragraph";
+import ToolCard from "../ThemeComponents/ToolCard";
 
 const tools = [
   {

@@ -6,9 +6,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
-import Paragraph from "../Paragraph";
-// import arrow icon from react
 import { IoMdArrowDropdown, IoMdArrowDropright } from "react-icons/io";
+import Paragraph from "../ThemeComponents/Paragraph";
 
 //only renderes h1, h2, h3 in the table of contents
 const getNestedHeadings = (headingElements) => {
