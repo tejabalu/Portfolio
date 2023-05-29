@@ -2,14 +2,14 @@
 title: "ForeFlame: Wildfire Prediction Dashboard"
 date: March 17, 2022
 description: ForeFlame is a dashboard designed for Fire Analysts to view the probabilities of wildfire occurrences to make informed tactical decisions on wildfire management and mitigation.
-thumbnailURL: "/posts/ForeFlame/title.png"
+thumbnailURL: "/projects/ForeFlame/title.png"
 tags: ["Full-Stack", "Product Design", "Virtual Reality"]
 order: 8
 ---
 
 # ForeFlame: Wildfire Prediction Dashboard
 
-![](../public/posts/ForeFlame/1.png)
+![](../public/projects/ForeFlame/1.png)
 
 > ForeFlame is a dashboard designed for Fire Analysts to view the probabilities of wildfire occurrences, along with other relevant parameters like vegetation, terrain, temperature, wind speed, and soil moisture, to make informed tactical decisions on wildfire management and mitigation.
 
@@ -37,7 +37,7 @@ ForeFlame uses various data aggregation techniques and machine learning methods 
 
 ### Data Sources and Machine Learning
 
-![Data Sourcing and Machine Learning Architecture](../public/posts/ForeFlame/2.png)
+![Data Sourcing and Machine Learning Architecture](../public/projects/ForeFlame/2.png)
 
 The following are the different data sets currently being used to train and infer from the machine learning model.
 
@@ -50,13 +50,13 @@ The machine learning model itself is run in Azure VM using FarmVibes workflows.
 
 ### Postprocessing and back-end APIs
 
-![Post processing ML outputs to GeoJSON](../public/posts/ForeFlame/3.png)
+![Post processing ML outputs to GeoJSON](../public/projects/ForeFlame/3.png)
 
 The machine learning outputs are converted to GeoJSON, and hosted through a Flask application, exposed through NGINX server (Azure VM).
 
 ### Visualization
 
-![Front-end Architecture](../public/posts/ForeFlame/4.png)
+![Front-end Architecture](../public/projects/ForeFlame/4.png)
 
 The data is displayed through the Webapp built using NextJS and mapping tools from [MapBox](https://visgl.github.io/react-map-gl/) and [Turf.js](https://turfjs.org/).
 
@@ -68,31 +68,31 @@ The following are the functionalities currently implemented in ForeFlame.
 
 ### Secure OAuth 2.0
 
-![](../public/posts/ForeFlame/oauth.png)
+![](../public/projects/ForeFlame/oauth.png)
 
 Secure authentication using Google Firebase for storing user preferences and bookmark polygons.
 
 ### Popup for each data points
 
-![](../public/posts/ForeFlame/popup.gif)
+![](../public/projects/ForeFlame/popup.gif)
 
 View individual parameters of each pixels by clicking on each data point.
 
 ### Create bookmarks
 
-![](../public/posts/ForeFlame/createbookmarks.gif)
+![](../public/projects/ForeFlame/createbookmarks.gif)
 
 Create bookmarks using polygons, which are linked to individual accounts and can be accessed anywhere.
 
 ### Navigate using bookmarks
 
-![](../public/posts/ForeFlame/bookmarks.gif)
+![](../public/projects/ForeFlame/bookmarks.gif)
 
 Use bookmarks to keep tabs and navigate to places.
 
 ### Tooltips
 
-![](../public/posts/ForeFlame/tooltips.gif)
+![](../public/projects/ForeFlame/tooltips.gif)
 
 View the function and usage of each component through helpful tooltips.
 

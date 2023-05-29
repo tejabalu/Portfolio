@@ -7,11 +7,11 @@ import BlogCard from "../components/ThemeComponents/BlogCard";
 import Paragraph from "../components/ThemeComponents/Paragraph";
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const files = fs.readdirSync(path.join("posts"));
+  const files = fs.readdirSync(path.join("projects"));
 
-  const posts = files.map((filename) => {
+  const projects = files.map((filename) => {
     const markdownWithMeta = fs.readFileSync(
-      path.join("posts", filename),
+      path.join("projects", filename),
       "utf-8"
     );
     const { data: fontMatter } = matter(markdownWithMeta);
@@ -22,13 +22,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
     };
   });
 
-  posts.sort((a, b) => {
+  projects.sort((a, b) => {
     return b.fontMatter.order - a.fontMatter.order;
   });
 
   return {
     props: {
-      posts,
+      projects,
     },
   };
 };
@@ -45,7 +45,7 @@ export interface postInterface {
   slug: string;
 }
 
-const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home = ({ projects }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Container maxW={"container.lg"}>
@@ -72,7 +72,7 @@ const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <SlideFade in={true} offsetY={80} delay={0.2}>
           <Center>
             <Box>
-              {posts.map((post: postInterface, index: number) => {
+              {projects.map((post: postInterface, index: number) => {
                 return <BlogCard key={index} post={post} />;
               })}
             </Box>

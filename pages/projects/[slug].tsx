@@ -92,7 +92,7 @@ export const getStaticProps = async ({
   params: { slug: string };
 }) => {
   const markdownWithMeta = fs.readFileSync(
-    path.join("posts", slug + ".md"),
+    path.join("projects", slug + ".md"),
     "utf-8"
   );
 
@@ -109,7 +109,7 @@ export const getStaticProps = async ({
 };
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync(path.join("posts"));
+  const files = fs.readdirSync(path.join("projects"));
 
   const paths = files.map((filename) => ({
     params: {

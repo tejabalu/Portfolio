@@ -2,14 +2,14 @@
 title: CSE 373 Reflection
 date: March 4th, 2022
 description: Personal reflections after going through the course Data Structures and Algorithms (CSE 373) at Paul G. Allen School of Computer Science and Engineering (University of Washington).
-thumbnailURL: "/posts/CSE_373_Reflection/title.webp"
+thumbnailURL: "/projects/CSE_373_Reflection/title.webp"
 tags: ["Algorithms", "CS", "Data Structures"]
 order: 6
 ---
 
 # Data Structures and Algorithms Course Reflections
 
-![](../public/posts/CSE_373_Reflection/DataStructuresMindMap.png)
+![](../public/projects/CSE_373_Reflection/DataStructuresMindMap.png)
 
 While any traditional computer programming course limits its encouragement to apply the fastest and most optimized algorithms, CSE 373 takes a step further and encourages one to think about the socio-technical impacts a program and software can have. Introducing concepts in a curated manner, they are also linked to real-life scenarios and case studies where different approaches to designing software and algorithms led to debilitated or enhanced social situations.
 
