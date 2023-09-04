@@ -9,7 +9,6 @@ import {
   SlideFade,
   UnorderedList,
 } from "@chakra-ui/react";
-import React from "react";
 import { BsCircleFill } from "react-icons/bs";
 import Paragraph from "../ThemeComponents/Paragraph";
 
@@ -24,6 +23,31 @@ const Experience = () => {
           <ListIcon as={BsCircleFill} color="blue.500" fontSize={10} mt={2.5} />
           <Box>
             <Box fontSize={"xl"}>
+              Software Engineer,&nbsp;
+              <Link
+                color="blue.500"
+                href="https://www.dmcinfo.com/"
+                isExternal
+                fontWeight="500"
+              >
+                DMC Inc
+              </Link>{" "}
+              (January 2023 - Present)
+            </Box>
+            <Paragraph fontSize="lg" pl={3}>
+              <Divider pt="2" borderColor={"transparent"} />
+              <UnorderedList>
+                <ListItem>
+                  Developing windows applications using C#, .NET, and WPF.
+                </ListItem>
+              </UnorderedList>
+            </Paragraph>
+          </Box>
+        </ListItem>
+        <ListItem display="flex">
+          <ListIcon as={BsCircleFill} color="blue.500" fontSize={10} mt={2.5} />
+          <Box>
+            <Box fontSize={"xl"}>
               Full-Stack Software Development Intern at&nbsp;
               <Link
                 color="blue.500"
@@ -33,7 +57,7 @@ const Experience = () => {
               >
                 Sensoria Inc.
               </Link>{" "}
-              (July 2022 - Present)
+              (July 2022 - September 2022)
             </Box>
             <Paragraph fontSize="lg" pl={3}>
               <Divider pt="2" borderColor={"transparent"} />
@@ -126,11 +150,27 @@ const Experience = () => {
 
             <Paragraph fontSize="lg" pl={3}>
               <Divider pt="2" borderColor={"transparent"} />
-              Spearheaded a team of four developers in developing industrial
-              software applications (Manufacturing Execution Systems) for
-              Industry 4.0 projects, focused on warehouse applications and
-              process-flow optimizations, implemented across all SG Glass plants
-              in India.
+              <UnorderedList>
+                <ListItem>
+                  Orchestrated truck-in and truck-out efficiency by implementing
+                  a truck-tracking system utilizing RFIDs and a real-time
+                  truck-tracking dashboard, resulting in a 25% reduction in
+                  truck standby time. Technologies used: Python, Flask, and
+                  React.
+                  <ListItem>
+                    Devised and implemented Python-based heuristic algorithms to
+                    optimize truck space utilization, resulting in monthly time
+                    savings of 250 man-hours and a 20% reduction in truck space.
+                    Successfully deployed across all SG glass plants in India.
+                  </ListItem>
+                  <ListItem>
+                    Designed and implemented a warehouse KPI dashboard for
+                    improved visibility of warehouse stocks, leading to 20%
+                    additional avoidance of dead stock. Technologies used:
+                    Python, Flask, and React.
+                  </ListItem>
+                </ListItem>
+              </UnorderedList>
             </Paragraph>
           </Box>
         </ListItem>

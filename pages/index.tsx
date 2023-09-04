@@ -1,6 +1,5 @@
 import { Container, Divider } from "@chakra-ui/react";
 import Head from "next/head";
-import React from "react";
 import Experience from "../components/IndexComponents/Experience";
 import HeroSection from "../components/IndexComponents/HeroSection";
 import Profile from "../components/IndexComponents/Profile";
@@ -11,17 +10,11 @@ export default function Home() {
     <div>
       <Head>
         <title>Teja Balu | Home</title>
-        <meta
-          name="description"
-          content="Teja Balu | SDE / Technical Product Manager"
-        />
+        <meta name="description" content="Teja Balu | SDE" />
         <meta property="og:type" content="website" />
         <meta name="robots" content="follow, index" />
         <meta property="og:url" content="https://tejabalu.com/" />
-        <meta
-          property="og:title"
-          content="Teja Balu | SDE / Technical Product Manager"
-        />
+        <meta property="og:title" content="Teja Balu | SDE" />
         <meta property="og:image" content="/meta-image.jpg" />
       </Head>
       <main>

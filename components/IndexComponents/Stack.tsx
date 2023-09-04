@@ -1,8 +1,8 @@
 import { Grid, Heading, SlideFade } from "@chakra-ui/react";
-import { FaGitAlt, FaJs, FaPython, FaReact } from "react-icons/fa";
+import { FaReact, FaSwift, FaWpforms } from "react-icons/fa";
 import {
   SiCsharp,
-  SiDocker,
+  SiDotnet,
   SiMicrosoftazure,
   SiTypescript,
 } from "react-icons/si";
@@ -11,32 +11,32 @@ import ToolCard from "../ThemeComponents/ToolCard";
 
 const tools = [
   {
-    name: "Python",
-    icon: <FaPython fontSize="20px" />,
+    name: "C#",
+    icon: <SiCsharp />,
   },
   {
-    name: "React.js",
-    icon: <FaReact fontSize="20px" />,
+    name: ".NET",
+    icon: <SiDotnet />,
   },
   {
-    name: "Javascript",
-    icon: <FaJs fontSize="20px" />,
+    name: "WPF",
+    icon: <FaWpforms fontSize="20px" />,
+  },
+  {
+    name: "Swift",
+    icon: <FaSwift fontSize="20px" />,
+  },
+  {
+    name: "SwiftUI",
+    icon: <FaSwift fontSize="20px" />,
   },
   {
     name: "TypeScript",
     icon: <SiTypescript />,
   },
   {
-    name: "C#",
-    icon: <SiCsharp />,
-  },
-  {
-    name: "GIT & Github",
-    icon: <FaGitAlt fontSize="20px" />,
-  },
-  {
-    name: "Docker",
-    icon: <SiDocker />,
+    name: "React.js",
+    icon: <FaReact fontSize="20px" />,
   },
   {
     name: "Azure",
@@ -55,8 +55,7 @@ const Stack = () => {
         Skills
       </Heading>
       <Paragraph fontSize="xl" lineHeight={1.6}>
-        The following are the technologies I've used over the years, and am
-        comfortable with.
+        The following are the technologies and frameworks I'm proficient at:
       </Paragraph>
       <Grid
         mt={6}

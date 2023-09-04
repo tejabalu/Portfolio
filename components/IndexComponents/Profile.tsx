@@ -23,17 +23,16 @@ const Profile = () => {
           Hey, I’m Teja Balu
         </Heading>
         <Paragraph fontSize="2xl" lineHeight={1.6}>
-          I'm currently studying {""}
+          I'm currently working as a Software Developer at{" "}
           <Link
+            href="https://www.dmcinfo.com"
+            target="_blank"
             color="blue.500"
-            href="https://gixnetwork.org/program/msti/"
             isExternal
-            fontWeight="500"
           >
-            Master of Science in Technology Innovation
-          </Link>{" "}
-          at the University of Washington.
-          <br />
+            DMC
+          </Link>
+          , based in Seattle.
         </Paragraph>
         <Box mt={10}>
           <LightMode>
